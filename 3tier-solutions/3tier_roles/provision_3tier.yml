@@ -1,13 +1,4 @@
 ---
-- name: Generate openstack in-memory inventory 
-  hosts: jumpbox
-  gather_facts: false
-
-  roles:
-    - name: osp-inventory
-
-# Setup front-end load balancer tier
-
 - name: Setup frontend load-balancer tier
   hosts: frontends
   #become: yes
