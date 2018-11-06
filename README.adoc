@@ -5,11 +5,13 @@
 ----
 .
 ├── 3tier-bad                 # Very badly written series of plays, but works
-├── 3tier-good                # Refactored 3tier-bad
-└── openstack
-    ├── 1_OpenStack           # Builds a bare bones 5 node cluster on OpenStack
-    └── 2_OpenStack           # Deploys 3tier-good to OpenStack
+├── 3tier-solutions
+│   ├── 3tier_roles           # Using roles, including ansible-galaxy`
+│   └── simple_imports        # Using simple imports + greerlinguy.postgresql
+├── openstack
+│   ├── 1_OpenStack           # Builds a bare bones 5 node cluster on OpenStack
+│   └── 2_OpenStack           # Deploys 3tier-good to OpenStack
+└── windows_labs              # Solutions to Module 3 Windows Labs
 ----
 
-TODO: Move OpenStack into 3tier-good roles
 
