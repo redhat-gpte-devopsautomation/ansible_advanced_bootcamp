@@ -1,0 +1,445 @@
+http://etherpad-opentlc-shared.apps.na39.openshift.opentlc.com/p/ansible_fra_2018_10_23
+
+Welcome to the class Etherpad - this pad text is synchronized as you type, so that everyone viewing this page sees the same text. This allows you to collaborate seamlessly on documents
+
+Location: Frankfurt
+Instructor:  Tony Kay (tok@redhat.com)
+Training Organizer: 
+Dates and Times: October 22nd-26th, 2018
+Monday 10:30 - 17:00
+Tuesday through Thursday: 9:00 - 17:00
+Friday: 9:00 to 13:00
+Homework: There's homework to be done after the course, and it's required for course credit.  You'll find it on your learning site for this class.
+
+Lunch Time: 12:30 -- 1 Hour :)
+
+Use case:
+    use ansible playbook inside a container where the target instances are behind a ssh proxy (bastion).
+Any thoughts ? @Tony: here's the link  https://github.com/openshift/playbook2image/tree/master/examples
+
+Student 1 Serana :) GUID 508e admin redhat123
+Student 2 Joe GUID - cd54 user: admin password: r3dh4t1!
+Student 3 - chrisp  GUID 0f9a   user: admin   password: redhat
+Student 4
+Student 5 Sergio GUID c4dc user admin passw: r3dh4t1!
+Student 6
+Student 7 Cédric GUID: 063f  admin/redhat
+Student 8 Ivan GUID: 813b admin/redhat1
+Student 9Ondřej GUID: 8b51 admin/frankfurt
+Student 10 Peter GUID 221c  admin/r3dh4t1!
+Student 11 Anil  GUID d924 admin/r3dh4t1
+Student 12 - Jacek GUID: d9dd user: admin pass: redhat1234
+Student 13 Daliann GUID d2b4 =>admin => redhat
+Student 14 JP GUID:69c4 => lab credentials
+Student 15Jihed  ad9c user: admin password: r3dh4t1!
+Student 16 - Alex GUID: f011; admin; redhat123
+Student 17 - Rinaldo GUID - 64b9  admin/password
+Student 18 - Tony
+
+Student 22 Nathan GUID - b533 - admin/redhat
+
+
+General Resources
+This Etherpad:
+Short URL: http://bit.ly/ansible-fra
+Full URL:    http://etherpad-opentlc-shared.apps.na39.openshift.opentlc.com/p/ansible_fra_2018_10_23
+Course
+https://learning.redhat.com/course/view.php?id=1042
+LABS
+Latest Lab Instructions are always at https://www.opentlc.com/labs/ocp_advanced_development -> https://www.opentlc.com/labs/ansible_advanced/
+Requires OpenTLC credentials to log in
+Partners only:
+https://training-lms.redhat.com/ 
+If you don't have access to it - email kboone@redhat.com
+Learning Paths: https://partnercenter.force.com/s/open_learning_paths
+
+Ansible General Resources
+
+The Docs!
+
+Blogs:
+Ansible Blog:
+AnsibleJunky - former student of this course! https://www.ansiblejunky.com/
+
+
+
+Module 2 - Best Practices Resources
+
+Videos:
+Ansible Best Practices (Ansiblefest 2016)  https://www.ansible.com/ansible-best-practices
+Ansible Best Practices: Roles and Modules  (Ansiblefest 2017) https://www.ansible.com/ansible-best-practices-2017
+Blogs:
+Ansible Best Practices  https://www.ansible.com/blog/ansible-best-practices-essentials?utm_content=68698162&utm_medium=social&utm_source=twitter
+Blocks:
+https://www.pandastrike.com/posts/20160308-ansible-blocks-examples
+https://www.jeffgeerling.com/blog/new-features-ansible-20-blocks
+Jinja 2
+Test your Jinja substitution: Jinja2 Tester: https://ansible.sivel.net/test/
+Linters:
+YAMLlint: https://github.com/adrienverge/yamllint
+roles, pre_tasks and post_tasks
+Blog: https://www.calebwoods.com/2015/06/27/mixing-ansible-roles-tasks/
+
+Module 3 - Windows
+Lab Tip: Remember all hosts have an external FQDN so can be accessed directly from your laptop.
+Ansible Blog, Windows Packet Management
+https://www.ansible.com/blog/windows-package-management
+Videos:
+Ansiblefest SanFrancisco 2017
+Authentication and CredSSP
+"Ansible + Windows - Beating the second hop with CredSSP”: http://www.absolutejam.co.uk/blog/ansible-windows-credssp/
+Troubleshooting WinRM
+http://www.hurryupandwait.io/blog/understanding-and-troubleshooting-winrm-connection-and-authentication-a-thrill-seekers-guide-to-adventure
+Mac User Resource for setting up keberos (similar to lab steps/cmds but file should be etc/krb5.conf ): 
+https://github.com/Microsoft/vscode-mssql/wiki/How-to-enable-Integrated-Authentication-on-macOS-and-Linux-using-Kerberos
+
+
+Module 3.5 - Networking Resources:
+     
+Good Introductory Video (68 minutes):
+https://www.ansible.com/resources/webinars-training/automating-your-network
+Ansible Networking Slides
+https://docs.google.com/presentation/d/1Enze6MGtyEcABzNxFyT_nqfdSESSjtnrIOeT2JWn0vk/edit?ts=5ad6e935#slide=id.g2f195aaf8f_1_252
+Ansible Networking Lightbulb - teaching and learning materials
+https://github.com/network-automation/lightbulb/tree/master/workshops/networking
+Ansible Networking Repos on github
+https://github.com/network-automation
+Introduction to Networking Video 
+https://www.ansible.com/network-automation-with-red-hat-ansible-engine-for-beginners
+Online Course: Written by a Red Hat Engineer: 
+https://www.thenetwork.engineer/
+From: https://docs.ansible.com/
+ios_banner - Manage multiline banners on Cisco IOS devices:
+https://docs.ansible.com/ansible/latest/modules/ios_banner_module.html#ios-banner-module
+https://www.ansible.com/blog/coming-soon-networking-features-in-ansible-2.5  -Declarative intent - modules list and commands inside
+
+https://github.com/ansible/ansible/blob/devel/docs/docsite/rst/network/user_guide/platform_index.rst - available connection types matrix for network platforms
+
+https://mojo.redhat.com/docs/DOC-1177427 - Ansible Network Field Demo days
+https://github.com/victorock/autodiscovery_inventory/tree/clean - nice example from Victor, shown on field days above
+Good github repos from former student Colin McCarty
+https://github.com/colin-mccarthy
+
+
+For anyone interested in integrating Ansible with Cisco ACI (application Centric Infrastructure), watch this presentation with demo:
+Network Automation with Cisco ACI and Ansible - Cisco - AnsibleFest London 2017
+
+    https://www.youtube.com/watch?v=Vo02dLboTpk                               
+
+
+
+Windows host through SSH bastion on Ansible
+
+Found some interesting reading and tested it.
+
+IT IS WORKING !!!! :-)  at least with win_ping
+
+Nice Work!
+
+Here you can find some more details:
+http://www.bloggingforlogging.com/2018/10/14/windows-host-through-ssh-bastion-on-ansible/
+https://groups.google.com/forum/#!topic/ansible-project/hqVIXJvc6tw
+
+
+psrp - Run tasks over Microsoft PowerShell Remoting Protocol
+https://docs.ansible.com/ansible/devel/plugins/connection/psrp.html
+
+
+My configuration:
+    
+ Inventory variables:   
+    
+#PSPR variables
+ansible_user=Administrator
+ansible_password=jVMijRwLbI02gFCo2xkjlZ9lxEA7bm7zgg==
+ansible_connection=psrp
+ansible_psrp_auth=basic
+ansible_psrp_cert_validation=ignore
+ansible_psrp_proxy=socks5h://localhost:2222
+
+You need persistent SSH connection between your ansible control host and bastion:
+
+ssh -D 2222 myuser-redhat.com@bastionhost
+
+
+
+Funny Windows Module :-)
+
+win_say - Text to speech module for Windows to speak messages and optionally play sounds
+https://docs.ansible.com/ansible/latest/modules/win_say_module.html#win-say-module
+
+
+Ansible Competitive Resources
+Great set of materials maintained mostly by Roland Wolters (who?) - One of marketing managers for ansible
+
+https://mojo.redhat.com/docs/DOC-1182004?et=watches.email.document
+
+Thanks!
+
+
+Module 04 - OpenStack
+
+New Repo to short circuit the first part of creating the OpenStack lab:
+https://github.com/prakhar1985/osp-ansible-lab
+yum install python-openstacksdk git
+
+Useful OpenStack Cheat Sheet if you want to explore your cluster (or don't beleive your machines are running)
+https://docs.openstack.org/ocata/user-guide/cli-cheat-sheet.html
+HINT: If your labs take 2 days to complete check the VMs (what you created) haven't gone to sleep!
+Great blog article about the lab written by a course studentstudent re OpenStack Lab
+http://naleejang.tistory.com/207
+Best book for Cloud: 
+Ansible Cloud Automation Cookbook
+Book on OpenStack Ansible Automation by Walter Bentley 
+(Head of the North American Ansible Practice
+
+-  pip install --upgrade setuptools
+- yum install python-openstacksdk git
+- pip install shade --ignore-installe
+
+
+Looking at openstack
+
+source ~/keystonerc_admin
+osp-example(keystone_admin)]# openstack server list
+
+
+
+Outputting your in-memory inventory!
+
+1) Create this task AFTER add_host
+
+   - name: Generate lab static inventory file
+        template:
+          src: lab_inventory.j2
+          dest: "my_inventory"
+
+2) Use this for lab_inventory.j2
+
+{% for item in groups %}
+
+[{{item}}]
+{%   for entry in groups[item] | sort  %}
+{{ entry }} ansible_host={{ hostvars[entry].ansible_ssh_host }}
+{%   endfor %}
+{% endfor %}
+
+
+
+Sample cat /etc/openstack//clouds.yaml
+
+clouds:
+  ospcloud:
+    auth:
+      auth_url: http://192.168.0.20:5000/
+      password: r3dh4t1!
+      project_name: admin
+      username: admin
+    identity_api_version: '3.0'
+    region_name: RegionOne
+ansible:
+  use_hostnames: True
+  expand_hostvars: False
+  fail_on_errors: True
+
+
+
+Module 05 - Tower
+
+
+
+Ansible Examples
+
+Nasty YAML syntax examples:
+
+https://github.com/ansible/ansible-examples
+
+especially: https://github.com/ansible/ansible-examples/tree/master/lamp_simple_rhel7
+
+In case you want to be like Tony: https://internal-redhat.icims.com/jobs/65866/enablement-senior-solutions-architect/job
+
+
+Setting up Ansible.cfg to use an ssh.cfg for JumpHosts
+
+1) Ansible.cfg file:
+
+[ssh_connection]
+ssh_args =              -F ./ssh.cfg
+
+2) ssh.cfg file:
+
+
+Match User ec2-user
+  IdentityFile ~/.ssh/68e7key.pem
+
+Match User ankay-redhat.com
+  IdentityFile ~/.ssh/id_rsa
+
+Host bastion
+  Hostname bastion.68e7.example.opentlc.com
+  User ankay-redhat.com
+  ForwardAgent yes
+  ControlMaster auto
+  ControlPath /tmp/%h-%r
+  
+  ControlPersist 5m
+
+Host *.internal *.opentlc.com
+  ProxyJump bastion
+  User ec2-user
+
+Host *
+  StrictHostKeyChecking no
+
+
+@ Tony:
+    
+    Ansible, the missing piece. Presentation at Zabbix Conference 2017
+    
+this could be interesting presentation about Ansible/Zabbix integration:
+
+https://www.zabbix.com/integrations/ansible
+
+
+
+Ansible Tower Instalation notes
+
+When you get failure during Tower instalation indicating ansible cannot do sudo on remote nodes start your installation with below
+
+ANSIBLE_SUDO=True ./setup.sh
+
+
+@Tony
+looks like "LDAP Organization and Team Mapping" doesn't work as described in lab and/or docs in 3.3.  Users from AD do not get mapping to proper Team.
+
+
+
+Import an inventory file to tower: (btw, it's too dirty)
+tower-manage inventory_import --source ./myhosts --inventory-id 5 --overwrite
+
+Getting the size of an array in Jinja2: "{{ my_array | length }}
+
+
+
+ansible.cfg:
+    
+ [defaults]
+inventory=./osp_jumpbox_inventory
+timeout=180
+
+[ssh_connection]
+ssh_args=" -F ./ssh.cfg -o ControlMaster=auto -o ControlPersist=180s"
+host_key_checking=False
+
+
+Sample ssh.cfg
+
+Host workstation
+  Hostname workstation-cd71.rhpds.opentlc.com
+  User cloud-user
+
+Host 10.10.10.*
+  User cloud-user
+  ProxyJump workstation
+
+Match User cloud-user
+  IdentityFile ~/.ssh/openstack.pem
+
+Host *
+  ControlMaster auto
+  ControlPath /tmp/%h-%r
+  ControlPersist 5m
+  PasswordAuthentication no
+  ForwardAgent yes
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+
+
+
+Print out an in-memory inventory: 
+    
+    roles/osp-facts/templates/lab_inventory.j2
+
+
+{%  for item in groups | sort if item != "jumpbox" %}
+
+[{{item}}]
+{%   for entry in groups[item] | sort if entry != "workstation" %}
+{{ entry }}
+{%   endfor %}
+{% endfor %}
+
+
+New roles/osp-facts/tasks/main.yml
+
+- name: Fetch Instance Info
+    os_server_facts:
+      cloud: ospcloud
+      region_name: RegionOne
+    register: result
+
+  - name: Add host
+    add_host:
+      name: "{{ item.public_v4 }}"
+     group:
+        - "{{ item.metadata.group }}"
+        - "{{ item.metadata.deploExportyment_name }}"
+    loop: "{{result.ansible_facts.openstack_servers}}"
+
+  - name: Add host
+    add_host:
+      name: "{{ item.public_v4 }}"
+    loop: "{{result.ansible_facts.openstack_servers}}"
+
+  - name: Generate lab static inventory file
+    template:
+      src: lab_inventory.j2
+      dest: "/tmp/my_inventory"
+    delegate_to: localhost
+
+  - name: print hosts
+    debug:
+      msg:
+        - " name: {{ item.public_v4 }}"
+        - "group: {{ item.metadata.group }}"
+    loop: "{{result.ansible_facts.openstack_servers}}"
+
+
+from /var/log/tower/task_system.log 
+2018-10-25 14:41:56,564 INFO     awx.main.tasks Policy List, adding Instances [2, 3, 1] to Group tower
+2018-10-25 14:41:56,565 INFO     awx.main.tasks Policy List, adding Instances [4] to Group osp
+2018-10-25 14:41:56,567 INFO     awx.main.tasks Committing instances to isolated group osp
+2018-10-25 14:41:56,574 INFO     awx.main.tasks Total non-isolated instances:3 available for policy: 3
+2018-10-25 14:41:56,575 INFO     awx.main.tasks Cluster policy no-op finished in 0.0213799476624 seconds
+
+
+
+tower filter for AWS instances
+tag:instance_filter=three-tier-app-ankay*
+
+theres not the app group , only tag_AnsibleGroup_apps
+AWS tags should be mapped against ansible group 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
