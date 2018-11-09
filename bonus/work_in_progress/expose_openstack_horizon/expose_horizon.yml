@@ -1,0 +1,9 @@
+---
+- name: Expose Horizon via haproxy
+  hosts: jumpbox
+  gather_facts: false
+  roles:
+
+    - common
+    - { name: tok.haproxy, tags: haproxy }
+

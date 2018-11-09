@@ -1,0 +1,28 @@
+global
+  log /dev/log  local0
+  log /dev/log  local1 notice
+  stats socket /var/lib/haproxy/stats level admin
+  chroot /var/lib/haproxy
+  user haproxy
+  group haproxy
+  daemon
+
+defaults
+  log global
+  mode  http
+  option  httplog
+  option  dontlognull
+        timeout connect 5000
+        timeout client 50000
+        timeout server 50000
+
+frontend hafrontend
+    bind *:80
+    mode http
+    default_backend horizon
+
+backend horizon
+    mode https
+    balance roundrobin
+    option forwardfor
+    server ctrl.example.com 192.168.0.20:443 cookie ctrl.example.com  check
