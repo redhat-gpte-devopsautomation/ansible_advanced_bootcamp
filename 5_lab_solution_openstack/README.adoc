@@ -1,0 +1,60 @@
+== README OpenStack Lab
+
+=== Overview
+
+Spins up a 3 tier lab environment on OpenStack and then plays three-tier app against it.
+
+Current directory setup (July 2018)
+- 1_OpenStack, the 1st stage i.e. bring up OpenStack Infrastrucure
+- 2_OpenStack, create an In-memory Inventory and run "Good Ansible"
+- OSP_Master, WIP, combine the above 2 stages
+- ec2.demo, demo a dynamic inventory using sc2.py and ec2.ini
+
+TODO/Wish list
+* Tidy Prakhar's OpenStack Playbooks and roles
+** Make sure name: used everywhere
+** Make sure name: meaningful
+** Tody up white spacing etc
+** Rename OSP Facts role (in-memory inventory), misleading?
+** Collapse the 2 add_host tasks into 1?
+** Create a junja2 template to "print out" the inventory
+* Create a playbook/role to do initial setup
+
+Note: Entire lab can be run from laptop
+
+=== Running the Lab
+
+4 main stages
+
+=== Workstation Preperation
+
+* Initial setup on workstation-GUID
+** Setup workstation
+*** setup the repos
+*** install utilities and packages
+*** install shade (OpenStack Python Library)
+*** download and setup ssh key for cloud-user (IMPORTANT)!
+*** create clouds.yml and verify openstack hypervisors are running
+*** download RHEL image into openstack
+*** verify openstack is working
+
+=== Laptop Preperation
+* Download key and set permissions
+* Download / create the OpenStack Playbooks
+* Create the flavor
+* Run `ansible-playbook site.yml`
+
+=== Create the OpenStack VMs
+
+(my Step-1 Playbooks)
+
+Verify they exist/work: `ssh -F ssh.cfg 10.10.10.4`
+
+=== Create 3-Tier App
+
+_Original source: git clone https://github.com/prakhar1985/good-ansible.git
+** just needs inventory and ssh.cfg updated with guid
+
+Jumpbox prepares OpenStack
+
+

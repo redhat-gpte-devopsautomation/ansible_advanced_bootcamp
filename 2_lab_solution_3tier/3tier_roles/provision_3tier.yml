@@ -1,0 +1,35 @@
+---
+- name: Setup frontend load-balancer tier
+  hosts: frontends
+  #become: yes
+  tags:
+    - frontends
+
+  roles:
+    - common
+    - frontend-tier
+
+# Setup application servers tier
+
+- name: Setup app tier
+  hosts: apps
+  #become: yes
+  tags:
+    - apps
+
+  roles:
+    - common
+    - app-tier
+
+# Setup database tier
+
+- name: Setup database tier
+  hosts: appdbs
+  #become: yes
+  tags:
+    - databases
+
+  roles:
+    - common
+    - geerlingguy.postgresql
+

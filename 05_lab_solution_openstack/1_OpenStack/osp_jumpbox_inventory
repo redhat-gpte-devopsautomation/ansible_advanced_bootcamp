@@ -1,6 +1,0 @@
-[all:vars]
-GUID=f156
-
-[jumpbox]
-workstation ansible_host=workstation-"{{ GUID }}".rhpds.opentlc.com ansible_user=cloud-user ansible_ssh_private_key_file=~/.ssh/openstack.pem
-

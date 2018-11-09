@@ -1,0 +1,5 @@
+
+== Questions
+
+Why doesn't ansible pick up the ssh user from ssh.cfg? 
+i.e. why does it need it in the inventory file?

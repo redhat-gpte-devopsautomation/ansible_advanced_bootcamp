@@ -1,0 +1,21 @@
+---
+- name: Install {{ load_balancer }}
+  package:
+    name: "{{ load_balancer }}"
+    state: present
+
+- name: Enable {{ load_balancer }} at boot
+  service:
+    name: "{{ load_balancer }}"
+    enabled: yes
+
+- name: Configure haproxy to load balance over app servers
+  template:
+    src: haproxy.cfg.j2
+    dest: /etc/haproxy/haproxy.cfg
+    mode: 0644
+
+- name: Start {{ load_balancer }}
+  service:
+    name: "{{ load_balancer }}"
+    state: restarted

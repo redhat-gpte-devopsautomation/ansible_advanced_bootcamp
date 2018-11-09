@@ -1,0 +1,15 @@
+- name: Run common setup
+  import_playbook: playbooks/common.yml
+
+- name: Install and configure frontend
+  import_playbook: playbooks/front_end.yml
+ 
+- name: Install and configure app_tier
+  import_playbook: playbooks/app_tier.yml
+
+- name: Install database tier
+  hosts: appdbs
+
+  roles:
+    - {name: geerlingguy.postgresql, tags: [dbs, postgres]}
+
