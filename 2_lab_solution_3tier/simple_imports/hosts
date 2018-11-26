@@ -1,6 +1,5 @@
 [jumpbox]
 bastion 
-#bastion ansible_host=bastion."{{ GUID }}".example.opentlc.com
 
 [frontends]
 frontend1 ansible_host=frontend1."{{ GUID }}".internal
@@ -12,13 +11,12 @@ app2 ansible_host=app2."{{ GUID }}".internal
 [appdbs]
 appdb1 ansible_host=appdb1."{{ GUID }}".internal
 
-[internal:vars]
-timeout=60
-ansible_become=yes
-ansible_user=ec2-user
-
 [internal:children]
 frontends
 apps
 appdbs
 
+[internal:vars]
+timeout=60
+ansible_become=yes
+ansible_user=ec2-user

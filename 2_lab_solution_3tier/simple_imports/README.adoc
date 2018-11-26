@@ -1,0 +1,7 @@
+== Overview
+
+A simple solution to make _bad-ansible_ more modular, maintainable etc.
+
+Basically the approach is to take the original playbook and break it into
+smaller parts through a series in `import_playbook` statements. However for 
+postgresql a galaxy role was used
