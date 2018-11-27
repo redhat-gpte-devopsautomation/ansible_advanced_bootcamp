@@ -1,0 +1,30 @@
+[jumpbox]
+bastion
+
+[towers]
+tower1.6c88.internal public_host_name=tower1.6c88.example.opentlc.com ansible_host=tower1.6c88.internal
+tower2.6c88.internal public_host_name=tower2.6c88.example.opentlc.com ansible_host=tower3.6c88.internal
+tower3.6c88.internal public_host_name=tower3.6c88.example.opentlc.com ansible_host=tower2.6c88.internal
+
+[support] # postgres primary and secondary
+support1.6c88.internal ansible_host=support2.6c88.internal
+support2.6c88.internal ansible_host=support1.6c88.internal
+
+[windows]
+ad1.6c88.internal ansible_host=ad1.6c88.example.opentlc.com ansible_password=jVMijRwLbI02gFCo2xkjlZ9lxEA7bm7zgg==
+
+[windows:vars]
+ansible_connection=winrm
+ansible_user=Administrator
+ansible_winrm_server_cert_validation=ignore
+ansible_become=false
+
+[internal:children]
+towers
+windows
+support
+
+[internal:vars]
+timeout=60
+ansible_become=yes
+ansible_user=ec2-user

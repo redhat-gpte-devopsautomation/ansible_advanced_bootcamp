@@ -4,4 +4,30 @@ A simple solution to make _bad-ansible_ more modular, maintainable etc.
 
 Basically the approach is to take the original playbook and break it into
 smaller parts through a series in `import_playbook` statements. However for 
-postgresql a galaxy role was used
+postgresql a galaxy role was used, in this case the popular geerlingguy.postgresql
+role.
+
+`ansible.cfg` sets an external `ssh.cfg` file so you will need to edit this:
+
+. set the correct GUID
+. set it for the correct type of ssh access, direct or via jumpbox. See below
+
+=== Usage
+
+ansible-playbook site.yml -e GUID=<YOUR_GUID>
+
+
+=== Notes on `ssh` and Jumpbox v. Direct
+
+This solution can be run in 3 ways:
+
+. From the bastion server
+. From your laptop or external control node (VM or other external server)
+** Using the externall FQDNs 
+** Using the bastion host as a jumpbox i.e. using the unroutable internal IPs
+
+
+
+
+
+
