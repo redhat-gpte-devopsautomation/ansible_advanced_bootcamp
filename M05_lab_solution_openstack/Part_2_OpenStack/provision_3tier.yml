@@ -10,7 +10,7 @@
 
 - name: Setup frontend load-balancer tier
   hosts: frontends
-  #become: yes
+  become: yes
   tags:
     - frontends
 
