@@ -10,6 +10,7 @@
 
 - name: Setup frontend load-balancer tier
   hosts: frontends
+  gather_facts: false
   become: yes
   tags:
     - frontends
@@ -22,6 +23,7 @@
 
 - name: Setup app tier
   hosts: apps
+  gather_facts: false
   #become: yes
   tags:
     - apps
