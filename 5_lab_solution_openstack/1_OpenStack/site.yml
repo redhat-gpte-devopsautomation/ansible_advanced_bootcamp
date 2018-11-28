@@ -1,4 +1,5 @@
 - hosts: jumpbox
+#  become: yes
   roles:
      - osp-flavor
      - osp-network
@@ -7,22 +8,22 @@
 
   tasks:
 
-    - name: Create frontend instance
-      include_role:
-         name: osp-instances
-         vars_from: frontend.yaml
+  - name: Create frontend instance
+    include_role:
+       name: osp-instances
+       vars_from: frontend.yaml
 
-    - name: Create app1 instance
-      include_role:
-         name: osp-instances
-         vars_from: app1.yaml
+  - name: Create app1 instance
+    include_role:
+       name: osp-instances
+       vars_from: app1.yaml
 
-    - name: Create app2 instance
-      include_role:
-         name: osp-instances
-         vars_from: app2.yaml
+  - name: Create app2 instance
+    include_role:
+       name: osp-instances
+       vars_from: app2.yaml
 
-    - name: Create db instance
-      include_role:
-         name: osp-instances
-         vars_from: db.yaml
+  - name: Create db instance
+    include_role:
+       name: osp-instances
+       vars_from: db.yaml

@@ -1,5 +1,18 @@
+=== Complete Solution to fully deploy the Infrastructure to OpenStack from your Laptop
 
-== Questions
+You need to do the following:
 
-Why doesn't ansible pick up the ssh user from ssh.cfg? 
-i.e. why does it need it in the inventory file?
+. In your inventory file `osp_jumpbox_inventory1`
+** change the value of the GUID to your own OpenStack GUID
+[source,ini]
+----
+[jumpbox:vars]
+GUID=5213
+----
+. In your `ssh.cfg` change the vale of GUID for workstation
+[source,ini]
+----
+Host workstation
+  Hostname workstation-5213.rhpds.opentlc.com
+----
+
