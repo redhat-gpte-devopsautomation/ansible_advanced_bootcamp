@@ -1,0 +1,23 @@
+== Complete Solution to fully deploy the Infrastructure to OpenStack from your Laptop
+
+This will fully deploy the entire infrastructure up to the point you will have
+the 4 *empty* RHEL VMs running
+
+=== Usage:
+
+You need to do the following 3 steps:
+
+. In your inventory file `osp_jumpbox_inventory`
+** change the value of the GUID to your own OpenStack GUID
+[source,ini]
+----
+[jumpbox:vars]
+GUID=5213
+----
+. In your `ssh.cfg` change the vale of GUID for workstation
+[source,ini]
+----
+Host workstation
+  Hostname workstation-5213.rhpds.opentlc.com
+----
+
