@@ -1,0 +1,81 @@
+- hosts: jumpbox
+  become: yes
+  gather_facts: false
+
+  vars:
+    yum_packages:
+      - ansible
+      - python-pip 
+      - gcc
+    pip_packages:
+      - openstacksdk
+
+  tasks:
+
+    - name: Insert cloud-user authorized key
+      authorized_key:
+        user: cloud-user
+        state: present
+        key:  http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
+      vars:  
+        ansible_user: ankay-redhat.com
+        ansible_ssh_private_key_file: ~/.ssh/id_rsa
+      tags:
+        - insert-key
+
+    - name: Insert repo file on Jumpbox   
+      copy:
+        src: open.repo
+        dest: /tmp/open.repo
+      tags:  
+        - insert-repo-file
+
+#    - name: yum-clean-metadata
+#      command: yum clean metadata
+#        args:
+#        warn: no    
+
+    - name: Install EPEL
+      yum_repository:
+        name: epel
+        description: EPEL YUM repo
+        baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+        state: present
+        enabled: yes
+      tags:
+        - install-epel
+
+    - name: Install pre-requisite yum packages including ansible    
+      package:
+        name: "{{ yum_packages }}"
+        state: latest
+      tags:
+        - install-yum
+
+    - name: Install openstacksdk via pip    
+      pip:
+        name: "{{ pip_packages }}"
+        state: latest
+      tags:
+        - install-pip-packages
+
+    - name: Configure clouds.yaml
+      template:
+        src: clouds.yaml
+        dest: /tmp/clouds.yaml
+      tags:  
+        - setup-clouds-yaml
+        
+    - name: Download RHEL QCOW image
+      get_url:
+        url: http://www.opentlc.com/download/osp_advanced_networking/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
+        dest: /root/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
+
+    - name: Load RHEL QCOW image into glance
+      os_image:
+        cloud: ospcloud
+        name: rhel-guest
+        container_format: bare
+        disk_format: qcow2
+        state: present
+        filename: /root/rhel-guest-image-7.2-20151102.0.x86_64.qcow2

@@ -1,0 +1,24 @@
+---
+#- name: 'STAGE 1: Prepare jumbox for OpenStack configuration'
+#  import_playbook: 1_prepare_jumpbox.yml
+#  tags:
+#    - stage1
+#    - prepare-jumpbox
+
+- name: 'STAGE 2: Build OpenStack VPC and deploy instances'
+  import_playbook: 2_build_osp_infrastructure.yml
+  tags:
+    - stage2
+    - build-openstack-infrastructure
+
+- name: 'STAGE 3: Generate inventory'
+  import_playbook: 3_generate_inventory.yml
+  tags:
+    - stage3
+    - generate-inventory
+
+- name: 'STAGE 4: Deploy 3Tier App'
+  import_playbook: 4_deploy_3tier_app.yml
+  tags:
+    - stage4
+    - deploy-3tier-app
