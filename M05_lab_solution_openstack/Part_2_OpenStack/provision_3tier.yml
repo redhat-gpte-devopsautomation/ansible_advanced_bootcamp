@@ -2,6 +2,8 @@
 - name: Generate openstack in-memory inventory 
   hosts: jumpbox
   gather_facts: false
+  tags:
+    - inventory
 
   roles:
     - name: osp-inventory
@@ -24,7 +26,7 @@
 - name: Setup app tier
   hosts: apps
   gather_facts: false
-  #become: yes
+  become: yes
   tags:
     - apps
 
@@ -36,7 +38,7 @@
 
 - name: Setup database tier
   hosts: appdbs
-  #become: yes
+  become: yes
   tags:
     - databases
 
