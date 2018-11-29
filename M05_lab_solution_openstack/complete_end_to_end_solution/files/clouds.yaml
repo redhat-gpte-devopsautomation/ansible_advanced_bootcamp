@@ -1,4 +1,3 @@
-/etc/openstack/clouds.yaml
 clouds:
   ospcloud:
     auth:

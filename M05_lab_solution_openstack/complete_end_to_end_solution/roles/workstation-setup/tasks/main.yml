@@ -1,0 +1,6 @@
+---
+# tasks file for workstation-setup
+- name: placeholder for workstation setup
+  debug:
+    msg: "Workstation role"
+
