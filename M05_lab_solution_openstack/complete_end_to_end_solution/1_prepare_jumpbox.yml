@@ -2,78 +2,9 @@
   become: yes
   gather_facts: false
 
-  vars:
-    epel_url: 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm'
-    yum_packages:
-      - ansible
-      - gcc
-      - python-pip 
-    pip_packages:
-      - openstacksdk
+  roles:
+    - workstation-setup
 
-  tasks:
+  tags:  
+    - workstation-setup
 
-    - name: Insert repo file on Jumpbox   
-      copy:
-        src: files/open.repo
-        dest: /etc/yum.repos.d/open.repo
-      tags:  
-        - insert-repo-file
-
-    - name: Yum clean all
-      command: yum clean all
-
-    - name: Install EPEL
-      yum:
-        name: "{{ epel_url }}"
-        state: present
-      tags:
-        - install-yum
-
-    - name: Install pre-requisite yum packages including ansible    
-      yum:
-        name: "{{ yum_packages }}"
-        state: latest
-      tags:
-        - install-yum
-
-    - name: Install openstacksdk via pip    
-      pip:
-        name: "{{ pip_packages }}"
-        state: latest
-      tags:
-        - install-pip-packages
-
-    - name: Configure /etc/openstack/clouds.yml
-      block:
-
-        - name: Create /etc/openstack directory
-          file: 
-            path: /etc/openstack
-            state: directory
-
-        - name: Copy clouds.yaml
-          template:
-            src: files/clouds.yaml
-            dest: /etc/openstack/clouds.yaml
-      tags:  
-        - setup_clouds_yaml
-
-    - name: Setup RHEL QCOW image for instances
-      block:
-
-        - name: Download RHEL QCOW image
-          get_url:
-            url: http://www.opentlc.com/download/osp_advanced_networking/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
-            dest: /root/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
-
-        - name: Load RHEL QCOW image into glance
-          os_image:
-            cloud: ospcloud
-            name: rhel-guest
-            container_format: bare
-            disk_format: qcow2
-            state: present
-            filename: /root/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
-      tags:      
-        - setup-rhel-image

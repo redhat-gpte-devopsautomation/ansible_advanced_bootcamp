@@ -21,3 +21,6 @@ Host workstation
   Hostname workstation-5213.rhpds.opentlc.com
 ----
 
+=== To Do
+
+* Finish tok-instance role (looping through instances)

@@ -1,6 +1,64 @@
----
-# tasks file for workstation-setup
-- name: placeholder for workstation setup
-  debug:
-    msg: "Workstation role"
+- name: Insert repo file on Jumpbox   
+  copy:
+    src: open.repo
+    dest: /etc/yum.repos.d/open.repo
+  tags:  
+    - insert-repo-file
 
+- name: Yum clean all
+  command: yum clean all
+
+- name: Install EPEL
+  package:
+    name: "{{ epel_url }}"
+    state: present
+  tags:
+    - install-epel
+
+- name: Install pre-requisite yum packages including ansible    
+  package:
+    name: "{{ yum_packages }}"
+    state: latest
+  tags:
+    - install-yum-packages
+
+- name: Install openstacksdk via pip    
+  pip:
+    name: "{{ pip_packages }}"
+    state: latest
+  tags:
+    - install-pip-packages
+
+- name: Configure /etc/openstack/clouds.yml
+  block:
+
+    - name: Create /etc/openstack directory
+      file: 
+        path: /etc/openstack
+        state: directory
+
+    - name: Copy clouds.yaml
+      copy:
+        src: clouds.yaml
+        dest: /etc/openstack/clouds.yaml
+  tags:  
+    - setup-clouds-yaml
+
+- name: Setup RHEL QCOW image for instances
+  block:
+
+    - name: Download RHEL QCOW image
+      get_url:
+        url: http://www.opentlc.com/download/osp_advanced_networking/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
+        dest: /root/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
+
+    - name: Load RHEL QCOW image into glance
+      os_image:
+        cloud: ospcloud
+        name: rhel-guest
+        container_format: bare
+        disk_format: qcow2
+        state: present
+        filename: /root/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
+  tags:      
+    - setup-rhel-image
