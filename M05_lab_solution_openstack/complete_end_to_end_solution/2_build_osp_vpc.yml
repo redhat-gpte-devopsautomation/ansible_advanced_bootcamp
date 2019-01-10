@@ -1,0 +1,8 @@
+- name: Build OpenStack VPC
+  hosts: jumpbox
+  roles:
+
+     - osp-flavor
+     - osp-network
+     - osp-keypair
+     - osp-securitygroup
