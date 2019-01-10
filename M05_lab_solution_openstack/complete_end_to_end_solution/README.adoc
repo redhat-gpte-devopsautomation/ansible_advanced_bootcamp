@@ -3,22 +3,23 @@
 This will fully deploy the entire infrastructure up to the point you will have
 the 4 *empty* RHEL VMs running
 
-=== Usage:
+=== SetUp:
 
-You need to do the following 3 steps:
+You need to do the following step:
 
-. In your inventory file `osp_jumpbox_inventory`
-** change the value of the GUID to your own OpenStack GUID
-[source,ini]
 ----
-[jumpbox:vars]
-GUID=5213
-----
-. In your `ssh.cfg` change the vale of GUID for workstation
+. In your `ssh.cfg` change the value of <YOUR_GUID> for workstation
 [source,ini]
 ----
 Host workstation
-  Hostname workstation-5213.rhpds.opentlc.com
+  Hostname workstation-<YOUR_GUID>.rhpds.opentlc.com
+----
+
+=== Usage
+
+[source,bash]
+----
+ansible-playbook site.yml -e GUID=<YOUR_GUID>
 ----
 
 === To Do
