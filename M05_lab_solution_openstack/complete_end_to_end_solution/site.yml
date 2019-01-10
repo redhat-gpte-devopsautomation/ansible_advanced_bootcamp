@@ -11,7 +11,7 @@
     - stage2
     - build-openstack-infrastructure
 
-- name: STAGE 3: Deploy instances to OpenStack VPC
+- name: 'STAGE 3: Deploy instances to OpenStack VPC'
   import_playbook: 3_build_osp_infrastructure.yml
   tags:
     - stage3
