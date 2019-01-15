@@ -1,5 +1,0 @@
-- name: Install database tier
-  hosts: appdbs
-
-  roles:
-    - geerlingguy.postgresql
