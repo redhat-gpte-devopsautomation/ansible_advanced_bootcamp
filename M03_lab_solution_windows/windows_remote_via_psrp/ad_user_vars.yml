@@ -4,3 +4,4 @@
    - { name: 'bill', firstname: 'Bill', surname: 'Gates', password: 'redhat@123', group_name: 'dev', group_scope: 'domainlocal'}
    - { name: 'mickey', firstname: 'Mickey', surname: 'Mouse', password: 'redhat@123', group_name: 'qa', group_scope: 'domainlocal'}
    - { name: 'donald', firstname: 'Donald', surname: 'Duck', password: 'redhat@123', group_name: 'qa', group_scope: 'domainlocal'}
+   - { name: 'tokx`', firstname: 'Tony', surname: 'Kay', password: 'redhat@123', group_name: 'qa', group_scope: 'domainlocal'}

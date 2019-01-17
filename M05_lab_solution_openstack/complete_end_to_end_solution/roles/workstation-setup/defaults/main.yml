@@ -5,3 +5,4 @@ yum_packages:
   - python-pip 
 pip_packages:
   - openstacksdk
+  - decorators

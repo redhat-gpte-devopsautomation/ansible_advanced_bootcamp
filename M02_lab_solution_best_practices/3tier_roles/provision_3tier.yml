@@ -1,7 +1,6 @@
 ---
 - name: Setup frontend load-balancer tier
   hosts: frontends
-  #become: yes
   tags:
     - frontends
 
@@ -13,7 +12,6 @@
 
 - name: Setup app tier
   hosts: apps
-  #become: yes
   tags:
     - apps
 
@@ -25,7 +23,6 @@
 
 - name: Setup database tier
   hosts: appdbs
-  #become: yes
   tags:
     - databases
 
