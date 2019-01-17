@@ -1,5 +1,6 @@
 - name: Build OpenStack VPC
   hosts: jumpbox
+
   roles:
 
      - osp-flavor

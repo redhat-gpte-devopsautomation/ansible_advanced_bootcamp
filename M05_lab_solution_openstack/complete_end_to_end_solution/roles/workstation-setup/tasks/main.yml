@@ -26,6 +26,7 @@
   pip:
     name: "{{ pip_packages }}"
     state: latest
+    extra_args: -U
   tags:
     - install-pip-packages
 
@@ -43,6 +44,11 @@
         dest: /etc/openstack/clouds.yaml
   tags:  
     - setup-clouds-yaml
+
+- name: Setup cloud-user key    
+  authorized_key: 
+    user: cloud-user
+    key: "{{ lookup('url', 'http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub') }}"
 
 - name: Setup RHEL QCOW image for instances
   block:

@@ -1,0 +1,11 @@
+---
+- name: Just a handy debug playbook to test stuff
+  hosts: localhost
+  connection: local
+  #  gather_facts: false
+
+  tasks:
+
+    - name: Validate the value of var ansible_env
+      debug:
+        var: ansible_env

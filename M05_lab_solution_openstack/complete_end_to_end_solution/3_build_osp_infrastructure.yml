@@ -1,4 +1,4 @@
-- name: Build OpenStack VPC
+- name: Build OpenStack instances on existing VPC
   hosts: jumpbox
 
   tasks:
