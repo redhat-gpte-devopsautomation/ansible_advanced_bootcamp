@@ -1,10 +1,12 @@
 - hosts: jumpbox
   become: yes
   gather_facts: false
+  tags:  
+    - stage1
+    - workstation-setup
+
 
   roles:
     - workstation-setup
 
-  tags:  
-    - workstation-setup
 

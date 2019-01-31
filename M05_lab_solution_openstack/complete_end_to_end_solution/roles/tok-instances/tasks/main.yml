@@ -33,7 +33,7 @@
 
 - name: Wait for servers by name to be available
   wait_for:
-    host: "{{ item.item.openstack.interface_ip }}"
+    host: "{{ item.item.openstack.public_v4 }}"
     port: 22
     search_regex: OpenSSH
     timeout: 600

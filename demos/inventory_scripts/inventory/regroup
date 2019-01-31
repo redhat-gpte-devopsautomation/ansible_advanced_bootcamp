@@ -1,3 +1,5 @@
 [apps:children]
 tag_AnsibleGroup_apps
+tag_AnsibleGroup_appstest
+tag_AnsibleGroup_appsdbs
 

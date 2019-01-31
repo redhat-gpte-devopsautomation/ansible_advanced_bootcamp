@@ -13,7 +13,7 @@
 
     - name: Display facts  
       debug:
-        var: result
+        var: result | to_nice_json
         verbosity: 2
 
     - name: Add host

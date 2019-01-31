@@ -1,5 +1,8 @@
 - name: Build OpenStack instances on existing VPC
   hosts: jumpbox
+  tags:
+    - stage3
+    - build_instances
 
   tasks:
 
