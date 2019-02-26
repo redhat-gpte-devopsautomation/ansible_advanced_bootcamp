@@ -23,6 +23,15 @@
 
 - name: Setup database tier
   hosts: appdbs
+  vars:
+    postgresql_databases:
+      - name: example_db
+      - awx  
+    postgresql_users:
+      - name: example_user
+        password: supersecure
+      - name: awx
+        password: supersecure
   tags:
     - databases
 

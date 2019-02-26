@@ -16,6 +16,12 @@
         var: result | to_nice_json
         verbosity: 2
 
+    - name: Output os_server facts 
+      template:
+        src: ./templates/os_instance_facts.j2
+        dest: /tmp/os_servers_facts
+      delegate_to: localhost
+
     - name: Add host
       add_host:
         name: "{{ item.public_v4 }}"
@@ -24,11 +30,11 @@
           - "{{ item.metadata.deployment_name }}"
       loop: "{{ result.ansible_facts.openstack_servers }}"
 
-    - name: Generate lab static inventory file
-      template:
-        src: lab_inventory.j2
-        dest: "/tmp/my_inventory"
-      delegate_to: localhost
+#    - name: Generate lab static inventory file
+#      template:
+#        src: lab_inventory.j2
+#        dest: "/tmp/my_inventory"
+#      delegate_to: localhost
 
     - name: print hosts
       debug:

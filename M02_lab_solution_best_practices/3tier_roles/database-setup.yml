@@ -1,0 +1,6 @@
+---
+- name: Setup database tier
+  hosts: appdbs
+  roles:
+    - geerlingguy.postgresql
+

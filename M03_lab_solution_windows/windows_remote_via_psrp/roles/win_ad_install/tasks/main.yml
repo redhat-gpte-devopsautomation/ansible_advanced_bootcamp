@@ -4,6 +4,9 @@
    include_management_tools: yes
    include_sub_features: yes
 
+- name: reboot once DC created
+  win_reboot:
+
 - name: Setup Active Directory Controller
   win_domain:
    dns_domain_name: "{{ ad_domain_name }}"

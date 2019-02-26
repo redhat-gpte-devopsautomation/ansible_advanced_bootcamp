@@ -1,0 +1,5 @@
+---
+# tasks file for role2
+- name: Show role 2 executes
+  debug:
+    msg: "Show role 2 executes"

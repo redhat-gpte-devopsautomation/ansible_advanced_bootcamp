@@ -1,0 +1,43 @@
+---
+- name: my playbook
+  hosts: localhost
+  gather_facts: false
+  become: false
+
+  pre_tasks:
+
+    - name: Show pre_tasks execute first
+      debug:
+        msg: "I'm a pre-task"
+
+  roles:
+    - role1
+    - role2
+
+  tasks:
+
+    - name: Show when tasks execute
+      debug:
+        msg: "I'm a task"
+      notify: handler2  
+
+    - name: Show when tasks execute
+      debug:
+        msg: "So am I"
+      notify: handler1  
+
+  post_tasks:
+
+    - name: Show when post_tasks execute
+      debug:
+        msg: "I'm a post task"
+
+  handlers:      
+
+    - name: handler1
+      debug:
+        msg: "I'm handler1"
+
+    - name: handler2
+      debug:
+        msg: "I'm handler2"
