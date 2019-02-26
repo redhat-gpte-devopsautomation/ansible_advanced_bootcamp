@@ -1,4 +1,5 @@
-ad_domain_name: ad1.2a51.example.opentlc.com
-ad_safe_mode_password: "{{ansible_password}}"
-ad_admin_user: "admin@{{ ad_domain_name}}"
-
+---
+ad_domain_name: " ad1.{{ GUID }}.example.opentlc.com"
+ad_safe_mode_password: "{{ ansible_password }}"
+ad_admin_user: "admin@{{ ad_domain_name }}"
+...
