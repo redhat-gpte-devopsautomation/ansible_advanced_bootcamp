@@ -1,5 +1,6 @@
 == Content for the Ansible Advanced Bootcamp
 
+This repo contains 
 
 [source,bash]
 ----
@@ -15,3 +16,17 @@
 ----
 
 
+.
+├── M02_best_practices_demos
+├── M02_lab_solution_best_practices
+├── M03_lab_solution_windows
+├── M05_lab_solution_openstack
+├── M06_lab_solution_tower
+├── README.adoc
+├── bad-ansible
+├── bonus
+├── demos
+├── homework
+└── utilities
+
+10 directories, 1 file
