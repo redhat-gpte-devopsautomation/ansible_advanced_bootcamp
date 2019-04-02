@@ -1,0 +1,8 @@
+plugin: aws_ec2
+boto_profile: gpte
+regions: 
+  - us-east-1
+group_by:
+filters: 
+  instance-state-name: running
+strict_permissions: False

@@ -1,15 +1,17 @@
 == Overview
 
-A simple solution to make _bad-ansible_ more modular, maintainable etc.
+A simple solution to make _bad-ansible_ more modular, maintainable etc. 
 
 Basically the approach is to take the original playbook and break it into
 smaller parts through a series in `import_playbook` statements. However for 
 postgresql a galaxy role was used, in this case the popular geerlingguy.postgresql
 role.
 
-`ansible.cfg` sets an external `ssh.cfg` file so you will need to edit this:
+The `ansible.cfg` sets an external `ssh.cfg` file so you will need to edit the `ssh.cfg`:
 
-. set the correct GUID
+. set the correct GUID for your lab
+. set the correct user
+. if necessary set the correct key
 . set it for the correct type of ssh access, direct or via jumpbox. See below
 
 === Usage

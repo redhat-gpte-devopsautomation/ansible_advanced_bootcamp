@@ -15,7 +15,7 @@ ad1 ansible_host=ad1."{{ GUID }}".internal
 
 [windows:vars]
 ansible_user=Administrator
-#ansible_password=jVMijRwLbI02gFCo2xkjlZ9lxEA7bm7zgg==
+ansible_password=jVMijRwLbI02gFCo2xkjlZ9lxEA7bm7zgg==
 ansible_connection=psrp
 ansible_psrp_auth=basic
 ansible_psrp_cert_validation=ignore

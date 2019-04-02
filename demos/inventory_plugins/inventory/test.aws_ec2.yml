@@ -1,0 +1,10 @@
+plugin: aws_ec2
+boto_profile: gpte
+regions: 
+  - us-east-1
+group_by:
+  - instance-type=t2.medium
+filters: 
+  tag:ostype: windows
+  instance-state-name: running
+strict_permissions: False
