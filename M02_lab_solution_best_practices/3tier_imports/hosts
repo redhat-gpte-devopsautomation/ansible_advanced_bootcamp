@@ -17,6 +17,6 @@ apps
 appdbs
 
 [internal:vars]
-timeout=60
+#timeout=60
 ansible_become=yes
-ansible_user=ec2-user
+#ansible_user=ec2-user

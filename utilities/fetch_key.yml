@@ -1,6 +1,6 @@
 ---
 - name: Fetch and install ssh key for lab
-  hosts: keyhost
+  hosts: jumpbox
   become: true
   gather_facts: false
   vars:
