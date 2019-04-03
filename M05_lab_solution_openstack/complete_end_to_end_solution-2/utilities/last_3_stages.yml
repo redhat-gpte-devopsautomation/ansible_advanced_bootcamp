@@ -1,0 +1,19 @@
+---
+- name: 'STAGE 3: Deploy instances to OpenStack VPC'
+  import_playbook: tok_build_osp_inf.yml
+  tags:
+    - stage3
+    - build-openstack-infrastructure
+
+- name: 'STAGE 4: Generate inventory'
+  import_playbook: 4_generate_inventory.yml
+  tags:
+    - stage4
+    - generate-inventory
+    - deploy-3tier-app
+
+- name: 'STAGE 5: Deploy 3Tier App'
+  import_playbook: 5_deploy_3tier_app.yml
+  tags:
+    - stage5
+    - deploy-3tier-app

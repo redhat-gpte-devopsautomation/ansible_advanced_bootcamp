@@ -1,0 +1,23 @@
+Host workstation
+  Hostname workstation-d093.rhpds.opentlc.com
+  User ankay-redhat.com
+
+#Host 10.10.10.* 192.168.* *.rhpds.opentlc.com
+Host 10.10.10.* *.rhpds.opentlc.com *.example.com
+  User cloud-user
+  ProxyJump workstation
+
+Match User cloud-user
+  IdentityFile ~/.ssh/openstack.pem
+
+Match User ankay-redhat.com
+  IdentityFile ~/.ssh/id_rsa
+
+Host *
+  ForwardAgent yes
+  ControlMaster auto
+  ControlPath /tmp/%h-%r
+  ControlPersist 5m
+  StrictHostKeyChecking no
+  #UserKnownHostsFile /dev/null
+

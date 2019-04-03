@@ -1,0 +1,34 @@
+- name: Fetch Instance Info
+  os_server_facts:
+    cloud: ospcloud
+    region_name: RegionOne
+  register: result
+
+- name: Add host
+  add_host:
+    name: "{{ item.public_v4 }}"
+    group: 
+      - "{{ item.metadata.group }}"
+      - "{{ item.metadata.deployment_name }}"
+  loop: "{{ result.ansible_facts.openstack_servers }}"
+
+
+- name: Output the in-memory inventory
+  block:
+
+  - name: Print hosts to STDOUT
+    debug:
+      msg:
+        - "name: {{ item.public_v4 }}"
+        - "group: {{ item.metadata.group }}"
+    loop: "{{ result.ansible_facts.openstack_servers }}"
+
+  - name: Generate lab static inventory file
+    template:
+      src: lab_inventory.j2
+      dest: "/tmp/my_inventory"
+    delegate_to: localhost
+
+  - name: Output location of example of inventory
+    debug:
+      msg: Your inventory was output to /tmp/my_inventory

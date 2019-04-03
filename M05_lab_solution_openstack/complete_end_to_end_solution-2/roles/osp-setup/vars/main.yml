@@ -1,0 +1,30 @@
+---
+# vars file for roles/osp-lab
+
+osp_networks:
+  # Public Facing Network   
+  external:
+    cloud_name: ospcloud
+    network_name: ext_network
+    subnet_name: ext_subnet
+    cidr_network: "10.10.10.0/24"
+    state: present
+    external: true
+
+
+  # Private Facing Network   
+  internal:
+    cloud_name: ospcloud
+    network_name: int_network
+    subnet_name: int_subnet
+    cidr_network: "20.20.20.0/24"
+    state: present
+    external: false
+
+  # Public Facing Router connecting the two networks
+osp_router:
+  router:
+    cloud_name: ospcloud
+    state: present
+    name: router
+    network: ext_network

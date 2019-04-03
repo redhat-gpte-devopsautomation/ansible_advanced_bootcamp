@@ -1,0 +1,10 @@
+---
+- name: Setup OSP Virtual Cloud Infrastructure
+  hosts: jumpbox
+  tags:
+    - stage2
+    - build_vpc
+
+  roles:
+   -  osp-setup
+...   

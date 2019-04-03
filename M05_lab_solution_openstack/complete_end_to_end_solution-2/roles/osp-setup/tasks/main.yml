@@ -1,0 +1,7 @@
+---
+# tasks file for roles/osp-lab
+- include_tasks: create-image.yml
+- include_tasks: create-flavor.yml
+- include_tasks: create-keypair.yml
+- include_tasks: create-network.yml
+- include_tasks: create-sg.yml

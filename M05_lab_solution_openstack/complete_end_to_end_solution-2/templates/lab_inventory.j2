@@ -1,0 +1,9 @@
+{{ ansible_managed | comment }}
+
+{% for item in groups | sort if item != "docker_control" %}
+
+[{{item}}]
+{%   for entry in groups[item] | sort if entry != "docker_host" %}
+{{ entry }} ansible_host={{ hostvars[entry].ansible_host }} 
+{%   endfor %}
+{% endfor %}

@@ -1,0 +1,21 @@
+---
+instance_details:
+- instance_name: app1
+  group: apps
+  deployment: dev
+  security_group_name: app_servers
+
+- instance_name: app2
+  group: apps
+  deployment: dev
+  security_group_name: app_servers
+
+- instance_name: db
+  group: appdbs
+  deployment: dev
+  security_group_name: db_servers
+
+- instance_name: frontend
+  group: frontends
+  deployment: dev
+  security_group_name: frontend_servers 

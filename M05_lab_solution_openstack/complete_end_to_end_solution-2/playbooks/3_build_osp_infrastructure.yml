@@ -1,0 +1,16 @@
+---
+- name: Setup OSP Virtual Cloud Infrastructure
+  hosts: jumpbox
+  tags:
+    - stage3
+
+  tasks:
+
+#  - name: Import instance cars
+#    include_vars: instance_vars.yml
+
+  - name: Create instances using instance_details"
+    include_role:
+      name: tok-instances
+      public: true
+...   
