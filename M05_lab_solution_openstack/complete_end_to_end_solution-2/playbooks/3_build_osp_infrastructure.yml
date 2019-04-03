@@ -1,6 +1,7 @@
 ---
 - name: Setup OSP Virtual Cloud Infrastructure
   hosts: jumpbox
+  gather_facts: false
   tags:
     - stage3
 

@@ -65,3 +65,4 @@
   poll: 0
   register: wait_for_instance
   loop: "{{ instancefloatingip.results }}"
+...
