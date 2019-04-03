@@ -1,6 +1,0 @@
----
-- name: front
-  hosts: frontends
-
-  tasks:
-    - import_tasks: front_tasks.yml

@@ -9,7 +9,10 @@
 
 - name: Install database tier
   hosts: appdbs
+  tags:
+    - dbs
+    - postgres
 
   roles:
-    - {name: geerlingguy.postgresql, tags: [dbs, postgres]}
+    - geerlingguy.postgresql
 
