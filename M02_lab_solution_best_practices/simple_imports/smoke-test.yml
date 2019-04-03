@@ -1,9 +1,0 @@
-- name: Check webserver for correct response
-  uri:
-    url: http://localhost/myapp
-    return_content: yes
-  until: '"Hello World" in result.content'
-  retries: 10
-  delay: 1
-  register: result
-
