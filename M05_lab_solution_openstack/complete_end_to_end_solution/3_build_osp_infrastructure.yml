@@ -1,27 +1,27 @@
-- name: Build OpenStack instances on existing VPC
-  hosts: jumpbox
-  tags:
-    - stage3
-    - build_instances
+
+- hosts: localhost
+  connection: local
+#  become: yes
+  roles:
+     - osp-network
+     - osp-keypair
+     - osp-securitygroup
+     - osp-flavor
 
   tasks:
 
-  - name: Create frontend instance
-    include_role:
-       name: osp-instances
-       vars_from: frontend.yaml
+  - name: import instance_details
+    include_vars: instance_vars.yml
 
-  - name: Create app1 instance
+    ##Create Instances
+  - name: "Create instances using instance_details"
     include_role:
-       name: osp-instances
-       vars_from: app1.yaml
+      name: osp-instances
+      public: true
 
-  - name: Create app2 instance
-    include_role:
-       name: osp-instances
-       vars_from: app2.yaml
-
-  - name: Create db instance
-    include_role:
-       name: osp-instances
-       vars_from: db.yaml
+## Alternate Method to create dynmaic inventory
+  - name: Gather facts
+    include_role: 
+       name: osp-facts
+    tags:
+     - test_inventory
