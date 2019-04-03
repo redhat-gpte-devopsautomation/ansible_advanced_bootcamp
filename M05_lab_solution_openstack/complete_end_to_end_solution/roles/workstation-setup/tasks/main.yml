@@ -1,19 +1,19 @@
-- name: Insert repo file on Jumpbox   
-  copy:
-    src: open.repo
-    dest: /etc/yum.repos.d/open.repo
-  tags:  
-    - insert-repo-file
+#- name: Insert repo file on Jumpbox   
+#  copy:
+#    src: open.repo
+#    dest: /etc/yum.repos.d/open.repo
+#  tags:  
+#    - insert-repo-file
 
-- name: Yum clean all
-  command: yum clean all
+    #- name: Yum clean all
+    # command: yum clean all
 
-- name: Install EPEL
-  package:
-    name: "{{ epel_url }}"
-    state: present
-  tags:
-    - install-epel
+#- name: Install EPEL
+#  package:
+#    name: "{{ epel_url }}"
+#    state: present
+#  tags:
+#    - install-epel
 
 - name: Install pre-requisite yum packages including ansible    
   package:

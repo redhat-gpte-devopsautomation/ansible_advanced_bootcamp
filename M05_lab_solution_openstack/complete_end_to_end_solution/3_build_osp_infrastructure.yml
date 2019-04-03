@@ -19,9 +19,9 @@
       name: osp-instances
       public: true
 
-## Alternate Method to create dynmaic inventory
-  - name: Gather facts
-    include_role: 
-       name: osp-facts
-    tags:
-     - test_inventory
+### Alternate Method to create dynmaic inventory
+#  - name: Gather facts
+#    include_role: 
+#       name: osp-facts
+#    tags:
+#     - test_inventory
