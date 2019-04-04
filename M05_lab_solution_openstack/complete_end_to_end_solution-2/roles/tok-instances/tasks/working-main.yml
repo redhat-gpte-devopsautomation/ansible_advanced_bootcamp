@@ -29,7 +29,6 @@
       - "VM State results are {{ item.server.vm_state }}"
   loop: "{{ r_instances.results }}"
 
-
 - name: Add floating IP to instances
   os_floating_ip:
     cloud: ospcloud
@@ -59,9 +58,6 @@
     #`msg: "Floating IP is {{ item.item.floating_ips.floating_ip_address }}"
   loop: "{{ r_floating_ips.results }}"
   
-- name: pause
-  pause:
-
 - name: Wait for servers by name to be available
   wait_for:
     #host: "{{ item.item.instance_name  }}"
@@ -74,12 +70,4 @@
   loop: "{{ r_floating_ips.results }}"
   #loop: "{{ r_instances.results }}"
   delegate_to: "{{ inventory_hostname }}"
-
-#- name: Wait for servers to be available
-#  wait_for:
-#    host: "{{ item.item.floating_ips.floating_ip_address }}"
-#    port: 22
-#    search_regex: OpenSSH
-#    timeout: 600
-#  loop: "{{ r_floating_ips.results }}"  
-#  delegate_to: "{{ inventory_hostname }}"
+...  

@@ -1,0 +1,3914 @@
+{
+    "changed": false,
+    "msg": "All items completed",
+    "results": [
+        {
+            "_ansible_ignore_errors": null,
+            "_ansible_item_label": {
+                "_ansible_ignore_errors": null,
+                "_ansible_item_label": {
+                    "deployment": "dev",
+                    "group": "apps",
+                    "instance_name": "app1",
+                    "security_group_name": "apps"
+                },
+                "_ansible_item_result": true,
+                "_ansible_no_log": false,
+                "_ansible_parsed": true,
+                "changed": false,
+                "failed": false,
+                "id": "254af69a-85ec-4e0f-95cc-24eb06d2efe6",
+                "invocation": {
+                    "module_args": {
+                        "api_timeout": null,
+                        "auth": null,
+                        "auth_type": null,
+                        "auto_ip": true,
+                        "availability_zone": null,
+                        "boot_from_volume": false,
+                        "boot_volume": null,
+                        "cacert": null,
+                        "cert": null,
+                        "config_drive": false,
+                        "delete_fip": false,
+                        "flavor": "m2.small",
+                        "flavor_include": null,
+                        "flavor_ram": null,
+                        "floating_ip_pools": null,
+                        "floating_ips": null,
+                        "image": "rhel-guest",
+                        "image_exclude": "(deprecated)",
+                        "interface": "public",
+                        "key": null,
+                        "key_name": "ansible_ssh",
+                        "meta": {
+                            "deployment_name": "dev",
+                            "group": "apps"
+                        },
+                        "name": "app1",
+                        "network": null,
+                        "nics": [
+                            {
+                                "net-name": "int_network"
+                            }
+                        ],
+                        "region_name": null,
+                        "reuse_ips": true,
+                        "scheduler_hints": null,
+                        "security_groups": [
+                            "apps"
+                        ],
+                        "state": "present",
+                        "terminate_volume": false,
+                        "timeout": 180,
+                        "userdata": "#!/bin/bash\ncurl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub\ncat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys\ncurl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo\ncp /tmp/internal.repo /etc/yum.repos.d/internal.repo\n",
+                        "verify": null,
+                        "volume_size": false,
+                        "volumes": [],
+                        "wait": true
+                    }
+                },
+                "item": {
+                    "deployment": "dev",
+                    "group": "apps",
+                    "instance_name": "app1",
+                    "security_group_name": "apps"
+                },
+                "openstack": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000001",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2019-04-03T23:28:06.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "accessIPv4": "10.10.10.5",
+                    "accessIPv6": "",
+                    "addresses": {
+                        "int_network": [
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:03:f2:4b",
+                                "OS-EXT-IPS:type": "fixed",
+                                "addr": "20.20.20.6",
+                                "version": 4
+                            },
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:03:f2:4b",
+                                "OS-EXT-IPS:type": "floating",
+                                "addr": "10.10.10.5",
+                                "version": 4
+                            }
+                        ]
+                    },
+                    "adminPass": null,
+                    "az": "nova",
+                    "block_device_mapping": null,
+                    "cloud": "ospcloud",
+                    "config_drive": "",
+                    "created": "2019-04-03T23:27:23Z",
+                    "created_at": "2019-04-03T23:27:23Z",
+                    "disk_config": "MANUAL",
+                    "flavor": {
+                        "id": "2f5163fc-1ed4-4028-aaf9-a8fa7e3fb634",
+                        "name": "m2.small"
+                    },
+                    "has_config_drive": false,
+                    "hostId": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                    "host_id": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                    "hypervisor_hostname": "comp01.example.com",
+                    "id": "254af69a-85ec-4e0f-95cc-24eb06d2efe6",
+                    "image": {
+                        "id": "e4339a48-87fb-4ea9-8de6-6c8f894bd6b0",
+                        "name": "rhel-guest"
+                    },
+                    "instance_name": "instance-00000001",
+                    "interface_ip": "10.10.10.5",
+                    "key_name": "ansible_ssh",
+                    "launched_at": "2019-04-03T23:28:06.000000",
+                    "location": {
+                        "cloud": "ospcloud",
+                        "project": {
+                            "domain_id": null,
+                            "domain_name": null,
+                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "name": "admin"
+                        },
+                        "region_name": "RegionOne",
+                        "zone": "nova"
+                    },
+                    "metadata": {
+                        "deployment_name": "dev",
+                        "group": "apps"
+                    },
+                    "name": "app1",
+                    "networks": {},
+                    "os-extended-volumes:volumes_attached": [],
+                    "personality": null,
+                    "power_state": 1,
+                    "private_v4": "20.20.20.6",
+                    "progress": 0,
+                    "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "properties": {
+                        "OS-DCF:diskConfig": "MANUAL",
+                        "OS-EXT-AZ:availability_zone": "nova",
+                        "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                        "OS-EXT-SRV-ATTR:instance_name": "instance-00000001",
+                        "OS-EXT-SRV-ATTR:user_data": null,
+                        "OS-EXT-STS:power_state": 1,
+                        "OS-EXT-STS:task_state": null,
+                        "OS-EXT-STS:vm_state": "active",
+                        "OS-SCH-HNT:scheduler_hints": null,
+                        "OS-SRV-USG:launched_at": "2019-04-03T23:28:06.000000",
+                        "OS-SRV-USG:terminated_at": null,
+                        "os-extended-volumes:volumes_attached": []
+                    },
+                    "public_v4": "10.10.10.5",
+                    "public_v6": "",
+                    "region": "RegionOne",
+                    "scheduler_hints": null,
+                    "security_groups": [
+                        {
+                            "description": "ports_open",
+                            "id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                            "location": {
+                                "cloud": "ospcloud",
+                                "project": {
+                                    "domain_id": null,
+                                    "domain_name": null,
+                                    "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                    "name": "admin"
+                                },
+                                "region_name": "RegionOne",
+                                "zone": null
+                            },
+                            "name": "apps",
+                            "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "properties": {},
+                            "security_group_rules": [
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "38e4fda4-c7fa-48fb-a099-3f94d0bd5dda",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 8080,
+                                    "port_range_min": 8080,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "dadf69a8-0272-4552-84fc-33fdb9e8a9fc",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 22,
+                                    "port_range_min": 22,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                                    "tenant_id": ""
+                                }
+                            ],
+                            "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965"
+                        }
+                    ],
+                    "status": "ACTIVE",
+                    "tags": [],
+                    "task_state": null,
+                    "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "terminated_at": null,
+                    "updated": "2019-04-03T23:28:05Z",
+                    "user_data": null,
+                    "user_id": "97656d07875c40b38805582946989e49",
+                    "vm_state": "active",
+                    "volumes": []
+                },
+                "server": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000001",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2019-04-03T23:28:06.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "accessIPv4": "10.10.10.5",
+                    "accessIPv6": "",
+                    "addresses": {
+                        "int_network": [
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:03:f2:4b",
+                                "OS-EXT-IPS:type": "fixed",
+                                "addr": "20.20.20.6",
+                                "version": 4
+                            },
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:03:f2:4b",
+                                "OS-EXT-IPS:type": "floating",
+                                "addr": "10.10.10.5",
+                                "version": 4
+                            }
+                        ]
+                    },
+                    "adminPass": null,
+                    "az": "nova",
+                    "block_device_mapping": null,
+                    "cloud": "ospcloud",
+                    "config_drive": "",
+                    "created": "2019-04-03T23:27:23Z",
+                    "created_at": "2019-04-03T23:27:23Z",
+                    "disk_config": "MANUAL",
+                    "flavor": {
+                        "id": "2f5163fc-1ed4-4028-aaf9-a8fa7e3fb634",
+                        "name": "m2.small"
+                    },
+                    "has_config_drive": false,
+                    "hostId": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                    "host_id": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                    "hypervisor_hostname": "comp01.example.com",
+                    "id": "254af69a-85ec-4e0f-95cc-24eb06d2efe6",
+                    "image": {
+                        "id": "e4339a48-87fb-4ea9-8de6-6c8f894bd6b0",
+                        "name": "rhel-guest"
+                    },
+                    "instance_name": "instance-00000001",
+                    "interface_ip": "10.10.10.5",
+                    "key_name": "ansible_ssh",
+                    "launched_at": "2019-04-03T23:28:06.000000",
+                    "location": {
+                        "cloud": "ospcloud",
+                        "project": {
+                            "domain_id": null,
+                            "domain_name": null,
+                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "name": "admin"
+                        },
+                        "region_name": "RegionOne",
+                        "zone": "nova"
+                    },
+                    "metadata": {
+                        "deployment_name": "dev",
+                        "group": "apps"
+                    },
+                    "name": "app1",
+                    "networks": {},
+                    "os-extended-volumes:volumes_attached": [],
+                    "personality": null,
+                    "power_state": 1,
+                    "private_v4": "20.20.20.6",
+                    "progress": 0,
+                    "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "properties": {
+                        "OS-DCF:diskConfig": "MANUAL",
+                        "OS-EXT-AZ:availability_zone": "nova",
+                        "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                        "OS-EXT-SRV-ATTR:instance_name": "instance-00000001",
+                        "OS-EXT-SRV-ATTR:user_data": null,
+                        "OS-EXT-STS:power_state": 1,
+                        "OS-EXT-STS:task_state": null,
+                        "OS-EXT-STS:vm_state": "active",
+                        "OS-SCH-HNT:scheduler_hints": null,
+                        "OS-SRV-USG:launched_at": "2019-04-03T23:28:06.000000",
+                        "OS-SRV-USG:terminated_at": null,
+                        "os-extended-volumes:volumes_attached": []
+                    },
+                    "public_v4": "10.10.10.5",
+                    "public_v6": "",
+                    "region": "RegionOne",
+                    "scheduler_hints": null,
+                    "security_groups": [
+                        {
+                            "description": "ports_open",
+                            "id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                            "location": {
+                                "cloud": "ospcloud",
+                                "project": {
+                                    "domain_id": null,
+                                    "domain_name": null,
+                                    "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                    "name": "admin"
+                                },
+                                "region_name": "RegionOne",
+                                "zone": null
+                            },
+                            "name": "apps",
+                            "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "properties": {},
+                            "security_group_rules": [
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "38e4fda4-c7fa-48fb-a099-3f94d0bd5dda",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 8080,
+                                    "port_range_min": 8080,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "dadf69a8-0272-4552-84fc-33fdb9e8a9fc",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 22,
+                                    "port_range_min": 22,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                                    "tenant_id": ""
+                                }
+                            ],
+                            "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965"
+                        }
+                    ],
+                    "status": "ACTIVE",
+                    "tags": [],
+                    "task_state": null,
+                    "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "terminated_at": null,
+                    "updated": "2019-04-03T23:28:05Z",
+                    "user_data": null,
+                    "user_id": "97656d07875c40b38805582946989e49",
+                    "vm_state": "active",
+                    "volumes": []
+                }
+            },
+            "_ansible_item_result": true,
+            "_ansible_no_log": false,
+            "_ansible_parsed": true,
+            "changed": false,
+            "failed": false,
+            "floating_ip": {
+                "attached": true,
+                "created_at": "2019-04-03T23:32:36Z",
+                "description": "",
+                "fixed_ip_address": "20.20.20.6",
+                "floating_ip_address": "10.10.10.5",
+                "floating_network_id": "cd2584de-6b10-4234-a65b-d646f9e860b5",
+                "id": "f79da3e5-6d56-4b72-8d5e-c1466b1d05d4",
+                "location": {
+                    "cloud": "ospcloud",
+                    "project": {
+                        "domain_id": null,
+                        "domain_name": null,
+                        "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                        "name": "admin"
+                    },
+                    "region_name": "RegionOne",
+                    "zone": null
+                },
+                "network": "cd2584de-6b10-4234-a65b-d646f9e860b5",
+                "port": "7ba52fac-e692-4472-acf2-18cecb8c39e0",
+                "port_id": "7ba52fac-e692-4472-acf2-18cecb8c39e0",
+                "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "properties": {},
+                "revision_number": 2,
+                "router": "0572437f-921e-4561-a92d-6a914f1fd743",
+                "router_id": "0572437f-921e-4561-a92d-6a914f1fd743",
+                "status": "ACTIVE",
+                "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "updated_at": "2019-04-03T23:32:36Z"
+            },
+            "invocation": {
+                "module_args": {
+                    "api_timeout": null,
+                    "auth": null,
+                    "auth_type": null,
+                    "availability_zone": null,
+                    "cacert": null,
+                    "cert": null,
+                    "fixed_address": null,
+                    "floating_ip_address": null,
+                    "interface": "public",
+                    "key": null,
+                    "nat_destination": null,
+                    "network": "ext_network",
+                    "purge": false,
+                    "region_name": null,
+                    "reuse": true,
+                    "server": "app1",
+                    "state": "present",
+                    "timeout": 180,
+                    "verify": null,
+                    "wait": true
+                }
+            },
+            "item": {
+                "_ansible_ignore_errors": null,
+                "_ansible_item_label": {
+                    "deployment": "dev",
+                    "group": "apps",
+                    "instance_name": "app1",
+                    "security_group_name": "apps"
+                },
+                "_ansible_item_result": true,
+                "_ansible_no_log": false,
+                "_ansible_parsed": true,
+                "changed": false,
+                "failed": false,
+                "id": "254af69a-85ec-4e0f-95cc-24eb06d2efe6",
+                "invocation": {
+                    "module_args": {
+                        "api_timeout": null,
+                        "auth": null,
+                        "auth_type": null,
+                        "auto_ip": true,
+                        "availability_zone": null,
+                        "boot_from_volume": false,
+                        "boot_volume": null,
+                        "cacert": null,
+                        "cert": null,
+                        "config_drive": false,
+                        "delete_fip": false,
+                        "flavor": "m2.small",
+                        "flavor_include": null,
+                        "flavor_ram": null,
+                        "floating_ip_pools": null,
+                        "floating_ips": null,
+                        "image": "rhel-guest",
+                        "image_exclude": "(deprecated)",
+                        "interface": "public",
+                        "key": null,
+                        "key_name": "ansible_ssh",
+                        "meta": {
+                            "deployment_name": "dev",
+                            "group": "apps"
+                        },
+                        "name": "app1",
+                        "network": null,
+                        "nics": [
+                            {
+                                "net-name": "int_network"
+                            }
+                        ],
+                        "region_name": null,
+                        "reuse_ips": true,
+                        "scheduler_hints": null,
+                        "security_groups": [
+                            "apps"
+                        ],
+                        "state": "present",
+                        "terminate_volume": false,
+                        "timeout": 180,
+                        "userdata": "#!/bin/bash\ncurl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub\ncat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys\ncurl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo\ncp /tmp/internal.repo /etc/yum.repos.d/internal.repo\n",
+                        "verify": null,
+                        "volume_size": false,
+                        "volumes": [],
+                        "wait": true
+                    }
+                },
+                "item": {
+                    "deployment": "dev",
+                    "group": "apps",
+                    "instance_name": "app1",
+                    "security_group_name": "apps"
+                },
+                "openstack": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000001",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2019-04-03T23:28:06.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "accessIPv4": "10.10.10.5",
+                    "accessIPv6": "",
+                    "addresses": {
+                        "int_network": [
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:03:f2:4b",
+                                "OS-EXT-IPS:type": "fixed",
+                                "addr": "20.20.20.6",
+                                "version": 4
+                            },
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:03:f2:4b",
+                                "OS-EXT-IPS:type": "floating",
+                                "addr": "10.10.10.5",
+                                "version": 4
+                            }
+                        ]
+                    },
+                    "adminPass": null,
+                    "az": "nova",
+                    "block_device_mapping": null,
+                    "cloud": "ospcloud",
+                    "config_drive": "",
+                    "created": "2019-04-03T23:27:23Z",
+                    "created_at": "2019-04-03T23:27:23Z",
+                    "disk_config": "MANUAL",
+                    "flavor": {
+                        "id": "2f5163fc-1ed4-4028-aaf9-a8fa7e3fb634",
+                        "name": "m2.small"
+                    },
+                    "has_config_drive": false,
+                    "hostId": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                    "host_id": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                    "hypervisor_hostname": "comp01.example.com",
+                    "id": "254af69a-85ec-4e0f-95cc-24eb06d2efe6",
+                    "image": {
+                        "id": "e4339a48-87fb-4ea9-8de6-6c8f894bd6b0",
+                        "name": "rhel-guest"
+                    },
+                    "instance_name": "instance-00000001",
+                    "interface_ip": "10.10.10.5",
+                    "key_name": "ansible_ssh",
+                    "launched_at": "2019-04-03T23:28:06.000000",
+                    "location": {
+                        "cloud": "ospcloud",
+                        "project": {
+                            "domain_id": null,
+                            "domain_name": null,
+                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "name": "admin"
+                        },
+                        "region_name": "RegionOne",
+                        "zone": "nova"
+                    },
+                    "metadata": {
+                        "deployment_name": "dev",
+                        "group": "apps"
+                    },
+                    "name": "app1",
+                    "networks": {},
+                    "os-extended-volumes:volumes_attached": [],
+                    "personality": null,
+                    "power_state": 1,
+                    "private_v4": "20.20.20.6",
+                    "progress": 0,
+                    "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "properties": {
+                        "OS-DCF:diskConfig": "MANUAL",
+                        "OS-EXT-AZ:availability_zone": "nova",
+                        "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                        "OS-EXT-SRV-ATTR:instance_name": "instance-00000001",
+                        "OS-EXT-SRV-ATTR:user_data": null,
+                        "OS-EXT-STS:power_state": 1,
+                        "OS-EXT-STS:task_state": null,
+                        "OS-EXT-STS:vm_state": "active",
+                        "OS-SCH-HNT:scheduler_hints": null,
+                        "OS-SRV-USG:launched_at": "2019-04-03T23:28:06.000000",
+                        "OS-SRV-USG:terminated_at": null,
+                        "os-extended-volumes:volumes_attached": []
+                    },
+                    "public_v4": "10.10.10.5",
+                    "public_v6": "",
+                    "region": "RegionOne",
+                    "scheduler_hints": null,
+                    "security_groups": [
+                        {
+                            "description": "ports_open",
+                            "id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                            "location": {
+                                "cloud": "ospcloud",
+                                "project": {
+                                    "domain_id": null,
+                                    "domain_name": null,
+                                    "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                    "name": "admin"
+                                },
+                                "region_name": "RegionOne",
+                                "zone": null
+                            },
+                            "name": "apps",
+                            "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "properties": {},
+                            "security_group_rules": [
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "38e4fda4-c7fa-48fb-a099-3f94d0bd5dda",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 8080,
+                                    "port_range_min": 8080,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "dadf69a8-0272-4552-84fc-33fdb9e8a9fc",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 22,
+                                    "port_range_min": 22,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                                    "tenant_id": ""
+                                }
+                            ],
+                            "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965"
+                        }
+                    ],
+                    "status": "ACTIVE",
+                    "tags": [],
+                    "task_state": null,
+                    "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "terminated_at": null,
+                    "updated": "2019-04-03T23:28:05Z",
+                    "user_data": null,
+                    "user_id": "97656d07875c40b38805582946989e49",
+                    "vm_state": "active",
+                    "volumes": []
+                },
+                "server": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000001",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2019-04-03T23:28:06.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "accessIPv4": "10.10.10.5",
+                    "accessIPv6": "",
+                    "addresses": {
+                        "int_network": [
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:03:f2:4b",
+                                "OS-EXT-IPS:type": "fixed",
+                                "addr": "20.20.20.6",
+                                "version": 4
+                            },
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:03:f2:4b",
+                                "OS-EXT-IPS:type": "floating",
+                                "addr": "10.10.10.5",
+                                "version": 4
+                            }
+                        ]
+                    },
+                    "adminPass": null,
+                    "az": "nova",
+                    "block_device_mapping": null,
+                    "cloud": "ospcloud",
+                    "config_drive": "",
+                    "created": "2019-04-03T23:27:23Z",
+                    "created_at": "2019-04-03T23:27:23Z",
+                    "disk_config": "MANUAL",
+                    "flavor": {
+                        "id": "2f5163fc-1ed4-4028-aaf9-a8fa7e3fb634",
+                        "name": "m2.small"
+                    },
+                    "has_config_drive": false,
+                    "hostId": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                    "host_id": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                    "hypervisor_hostname": "comp01.example.com",
+                    "id": "254af69a-85ec-4e0f-95cc-24eb06d2efe6",
+                    "image": {
+                        "id": "e4339a48-87fb-4ea9-8de6-6c8f894bd6b0",
+                        "name": "rhel-guest"
+                    },
+                    "instance_name": "instance-00000001",
+                    "interface_ip": "10.10.10.5",
+                    "key_name": "ansible_ssh",
+                    "launched_at": "2019-04-03T23:28:06.000000",
+                    "location": {
+                        "cloud": "ospcloud",
+                        "project": {
+                            "domain_id": null,
+                            "domain_name": null,
+                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "name": "admin"
+                        },
+                        "region_name": "RegionOne",
+                        "zone": "nova"
+                    },
+                    "metadata": {
+                        "deployment_name": "dev",
+                        "group": "apps"
+                    },
+                    "name": "app1",
+                    "networks": {},
+                    "os-extended-volumes:volumes_attached": [],
+                    "personality": null,
+                    "power_state": 1,
+                    "private_v4": "20.20.20.6",
+                    "progress": 0,
+                    "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "properties": {
+                        "OS-DCF:diskConfig": "MANUAL",
+                        "OS-EXT-AZ:availability_zone": "nova",
+                        "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                        "OS-EXT-SRV-ATTR:instance_name": "instance-00000001",
+                        "OS-EXT-SRV-ATTR:user_data": null,
+                        "OS-EXT-STS:power_state": 1,
+                        "OS-EXT-STS:task_state": null,
+                        "OS-EXT-STS:vm_state": "active",
+                        "OS-SCH-HNT:scheduler_hints": null,
+                        "OS-SRV-USG:launched_at": "2019-04-03T23:28:06.000000",
+                        "OS-SRV-USG:terminated_at": null,
+                        "os-extended-volumes:volumes_attached": []
+                    },
+                    "public_v4": "10.10.10.5",
+                    "public_v6": "",
+                    "region": "RegionOne",
+                    "scheduler_hints": null,
+                    "security_groups": [
+                        {
+                            "description": "ports_open",
+                            "id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                            "location": {
+                                "cloud": "ospcloud",
+                                "project": {
+                                    "domain_id": null,
+                                    "domain_name": null,
+                                    "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                    "name": "admin"
+                                },
+                                "region_name": "RegionOne",
+                                "zone": null
+                            },
+                            "name": "apps",
+                            "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "properties": {},
+                            "security_group_rules": [
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "38e4fda4-c7fa-48fb-a099-3f94d0bd5dda",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 8080,
+                                    "port_range_min": 8080,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "dadf69a8-0272-4552-84fc-33fdb9e8a9fc",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 22,
+                                    "port_range_min": 22,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                                    "tenant_id": ""
+                                }
+                            ],
+                            "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965"
+                        }
+                    ],
+                    "status": "ACTIVE",
+                    "tags": [],
+                    "task_state": null,
+                    "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "terminated_at": null,
+                    "updated": "2019-04-03T23:28:05Z",
+                    "user_data": null,
+                    "user_id": "97656d07875c40b38805582946989e49",
+                    "vm_state": "active",
+                    "volumes": []
+                }
+            }
+        },
+        {
+            "_ansible_ignore_errors": null,
+            "_ansible_item_label": {
+                "_ansible_ignore_errors": null,
+                "_ansible_item_label": {
+                    "deployment": "dev",
+                    "group": "apps",
+                    "instance_name": "app2",
+                    "security_group_name": "apps"
+                },
+                "_ansible_item_result": true,
+                "_ansible_no_log": false,
+                "_ansible_parsed": true,
+                "changed": false,
+                "failed": false,
+                "id": "3602b5ed-edcf-4f5f-90af-8ab5c490e562",
+                "invocation": {
+                    "module_args": {
+                        "api_timeout": null,
+                        "auth": null,
+                        "auth_type": null,
+                        "auto_ip": true,
+                        "availability_zone": null,
+                        "boot_from_volume": false,
+                        "boot_volume": null,
+                        "cacert": null,
+                        "cert": null,
+                        "config_drive": false,
+                        "delete_fip": false,
+                        "flavor": "m2.small",
+                        "flavor_include": null,
+                        "flavor_ram": null,
+                        "floating_ip_pools": null,
+                        "floating_ips": null,
+                        "image": "rhel-guest",
+                        "image_exclude": "(deprecated)",
+                        "interface": "public",
+                        "key": null,
+                        "key_name": "ansible_ssh",
+                        "meta": {
+                            "deployment_name": "dev",
+                            "group": "apps"
+                        },
+                        "name": "app2",
+                        "network": null,
+                        "nics": [
+                            {
+                                "net-name": "int_network"
+                            }
+                        ],
+                        "region_name": null,
+                        "reuse_ips": true,
+                        "scheduler_hints": null,
+                        "security_groups": [
+                            "apps"
+                        ],
+                        "state": "present",
+                        "terminate_volume": false,
+                        "timeout": 180,
+                        "userdata": "#!/bin/bash\ncurl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub\ncat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys\ncurl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo\ncp /tmp/internal.repo /etc/yum.repos.d/internal.repo\n",
+                        "verify": null,
+                        "volume_size": false,
+                        "volumes": [],
+                        "wait": true
+                    }
+                },
+                "item": {
+                    "deployment": "dev",
+                    "group": "apps",
+                    "instance_name": "app2",
+                    "security_group_name": "apps"
+                },
+                "openstack": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000002",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2019-04-03T23:28:55.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "accessIPv4": "10.10.10.8",
+                    "accessIPv6": "",
+                    "addresses": {
+                        "int_network": [
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:da:af:c9",
+                                "OS-EXT-IPS:type": "fixed",
+                                "addr": "20.20.20.11",
+                                "version": 4
+                            },
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:da:af:c9",
+                                "OS-EXT-IPS:type": "floating",
+                                "addr": "10.10.10.8",
+                                "version": 4
+                            }
+                        ]
+                    },
+                    "adminPass": null,
+                    "az": "nova",
+                    "block_device_mapping": null,
+                    "cloud": "ospcloud",
+                    "config_drive": "",
+                    "created": "2019-04-03T23:28:11Z",
+                    "created_at": "2019-04-03T23:28:11Z",
+                    "disk_config": "MANUAL",
+                    "flavor": {
+                        "id": "2f5163fc-1ed4-4028-aaf9-a8fa7e3fb634",
+                        "name": "m2.small"
+                    },
+                    "has_config_drive": false,
+                    "hostId": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                    "host_id": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                    "hypervisor_hostname": "comp00.example.com",
+                    "id": "3602b5ed-edcf-4f5f-90af-8ab5c490e562",
+                    "image": {
+                        "id": "e4339a48-87fb-4ea9-8de6-6c8f894bd6b0",
+                        "name": "rhel-guest"
+                    },
+                    "instance_name": "instance-00000002",
+                    "interface_ip": "10.10.10.8",
+                    "key_name": "ansible_ssh",
+                    "launched_at": "2019-04-03T23:28:55.000000",
+                    "location": {
+                        "cloud": "ospcloud",
+                        "project": {
+                            "domain_id": null,
+                            "domain_name": null,
+                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "name": "admin"
+                        },
+                        "region_name": "RegionOne",
+                        "zone": "nova"
+                    },
+                    "metadata": {
+                        "deployment_name": "dev",
+                        "group": "apps"
+                    },
+                    "name": "app2",
+                    "networks": {},
+                    "os-extended-volumes:volumes_attached": [],
+                    "personality": null,
+                    "power_state": 1,
+                    "private_v4": "20.20.20.11",
+                    "progress": 0,
+                    "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "properties": {
+                        "OS-DCF:diskConfig": "MANUAL",
+                        "OS-EXT-AZ:availability_zone": "nova",
+                        "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                        "OS-EXT-SRV-ATTR:instance_name": "instance-00000002",
+                        "OS-EXT-SRV-ATTR:user_data": null,
+                        "OS-EXT-STS:power_state": 1,
+                        "OS-EXT-STS:task_state": null,
+                        "OS-EXT-STS:vm_state": "active",
+                        "OS-SCH-HNT:scheduler_hints": null,
+                        "OS-SRV-USG:launched_at": "2019-04-03T23:28:55.000000",
+                        "OS-SRV-USG:terminated_at": null,
+                        "os-extended-volumes:volumes_attached": []
+                    },
+                    "public_v4": "10.10.10.8",
+                    "public_v6": "",
+                    "region": "RegionOne",
+                    "scheduler_hints": null,
+                    "security_groups": [
+                        {
+                            "description": "ports_open",
+                            "id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                            "location": {
+                                "cloud": "ospcloud",
+                                "project": {
+                                    "domain_id": null,
+                                    "domain_name": null,
+                                    "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                    "name": "admin"
+                                },
+                                "region_name": "RegionOne",
+                                "zone": null
+                            },
+                            "name": "apps",
+                            "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "properties": {},
+                            "security_group_rules": [
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "38e4fda4-c7fa-48fb-a099-3f94d0bd5dda",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 8080,
+                                    "port_range_min": 8080,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "dadf69a8-0272-4552-84fc-33fdb9e8a9fc",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 22,
+                                    "port_range_min": 22,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                                    "tenant_id": ""
+                                }
+                            ],
+                            "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965"
+                        }
+                    ],
+                    "status": "ACTIVE",
+                    "tags": [],
+                    "task_state": null,
+                    "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "terminated_at": null,
+                    "updated": "2019-04-03T23:28:54Z",
+                    "user_data": null,
+                    "user_id": "97656d07875c40b38805582946989e49",
+                    "vm_state": "active",
+                    "volumes": []
+                },
+                "server": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000002",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2019-04-03T23:28:55.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "accessIPv4": "10.10.10.8",
+                    "accessIPv6": "",
+                    "addresses": {
+                        "int_network": [
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:da:af:c9",
+                                "OS-EXT-IPS:type": "fixed",
+                                "addr": "20.20.20.11",
+                                "version": 4
+                            },
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:da:af:c9",
+                                "OS-EXT-IPS:type": "floating",
+                                "addr": "10.10.10.8",
+                                "version": 4
+                            }
+                        ]
+                    },
+                    "adminPass": null,
+                    "az": "nova",
+                    "block_device_mapping": null,
+                    "cloud": "ospcloud",
+                    "config_drive": "",
+                    "created": "2019-04-03T23:28:11Z",
+                    "created_at": "2019-04-03T23:28:11Z",
+                    "disk_config": "MANUAL",
+                    "flavor": {
+                        "id": "2f5163fc-1ed4-4028-aaf9-a8fa7e3fb634",
+                        "name": "m2.small"
+                    },
+                    "has_config_drive": false,
+                    "hostId": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                    "host_id": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                    "hypervisor_hostname": "comp00.example.com",
+                    "id": "3602b5ed-edcf-4f5f-90af-8ab5c490e562",
+                    "image": {
+                        "id": "e4339a48-87fb-4ea9-8de6-6c8f894bd6b0",
+                        "name": "rhel-guest"
+                    },
+                    "instance_name": "instance-00000002",
+                    "interface_ip": "10.10.10.8",
+                    "key_name": "ansible_ssh",
+                    "launched_at": "2019-04-03T23:28:55.000000",
+                    "location": {
+                        "cloud": "ospcloud",
+                        "project": {
+                            "domain_id": null,
+                            "domain_name": null,
+                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "name": "admin"
+                        },
+                        "region_name": "RegionOne",
+                        "zone": "nova"
+                    },
+                    "metadata": {
+                        "deployment_name": "dev",
+                        "group": "apps"
+                    },
+                    "name": "app2",
+                    "networks": {},
+                    "os-extended-volumes:volumes_attached": [],
+                    "personality": null,
+                    "power_state": 1,
+                    "private_v4": "20.20.20.11",
+                    "progress": 0,
+                    "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "properties": {
+                        "OS-DCF:diskConfig": "MANUAL",
+                        "OS-EXT-AZ:availability_zone": "nova",
+                        "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                        "OS-EXT-SRV-ATTR:instance_name": "instance-00000002",
+                        "OS-EXT-SRV-ATTR:user_data": null,
+                        "OS-EXT-STS:power_state": 1,
+                        "OS-EXT-STS:task_state": null,
+                        "OS-EXT-STS:vm_state": "active",
+                        "OS-SCH-HNT:scheduler_hints": null,
+                        "OS-SRV-USG:launched_at": "2019-04-03T23:28:55.000000",
+                        "OS-SRV-USG:terminated_at": null,
+                        "os-extended-volumes:volumes_attached": []
+                    },
+                    "public_v4": "10.10.10.8",
+                    "public_v6": "",
+                    "region": "RegionOne",
+                    "scheduler_hints": null,
+                    "security_groups": [
+                        {
+                            "description": "ports_open",
+                            "id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                            "location": {
+                                "cloud": "ospcloud",
+                                "project": {
+                                    "domain_id": null,
+                                    "domain_name": null,
+                                    "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                    "name": "admin"
+                                },
+                                "region_name": "RegionOne",
+                                "zone": null
+                            },
+                            "name": "apps",
+                            "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "properties": {},
+                            "security_group_rules": [
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "38e4fda4-c7fa-48fb-a099-3f94d0bd5dda",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 8080,
+                                    "port_range_min": 8080,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "dadf69a8-0272-4552-84fc-33fdb9e8a9fc",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 22,
+                                    "port_range_min": 22,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                                    "tenant_id": ""
+                                }
+                            ],
+                            "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965"
+                        }
+                    ],
+                    "status": "ACTIVE",
+                    "tags": [],
+                    "task_state": null,
+                    "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "terminated_at": null,
+                    "updated": "2019-04-03T23:28:54Z",
+                    "user_data": null,
+                    "user_id": "97656d07875c40b38805582946989e49",
+                    "vm_state": "active",
+                    "volumes": []
+                }
+            },
+            "_ansible_item_result": true,
+            "_ansible_no_log": false,
+            "_ansible_parsed": true,
+            "changed": false,
+            "failed": false,
+            "floating_ip": {
+                "attached": true,
+                "created_at": "2019-04-03T23:32:41Z",
+                "description": "",
+                "fixed_ip_address": "20.20.20.11",
+                "floating_ip_address": "10.10.10.8",
+                "floating_network_id": "cd2584de-6b10-4234-a65b-d646f9e860b5",
+                "id": "e150e56d-9973-4a10-839c-3ece123e1fe0",
+                "location": {
+                    "cloud": "ospcloud",
+                    "project": {
+                        "domain_id": null,
+                        "domain_name": null,
+                        "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                        "name": "admin"
+                    },
+                    "region_name": "RegionOne",
+                    "zone": null
+                },
+                "network": "cd2584de-6b10-4234-a65b-d646f9e860b5",
+                "port": "6a7dece5-ba5d-4bc0-a492-d575eee3afeb",
+                "port_id": "6a7dece5-ba5d-4bc0-a492-d575eee3afeb",
+                "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "properties": {},
+                "revision_number": 2,
+                "router": "0572437f-921e-4561-a92d-6a914f1fd743",
+                "router_id": "0572437f-921e-4561-a92d-6a914f1fd743",
+                "status": "ACTIVE",
+                "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "updated_at": "2019-04-03T23:32:41Z"
+            },
+            "invocation": {
+                "module_args": {
+                    "api_timeout": null,
+                    "auth": null,
+                    "auth_type": null,
+                    "availability_zone": null,
+                    "cacert": null,
+                    "cert": null,
+                    "fixed_address": null,
+                    "floating_ip_address": null,
+                    "interface": "public",
+                    "key": null,
+                    "nat_destination": null,
+                    "network": "ext_network",
+                    "purge": false,
+                    "region_name": null,
+                    "reuse": true,
+                    "server": "app2",
+                    "state": "present",
+                    "timeout": 180,
+                    "verify": null,
+                    "wait": true
+                }
+            },
+            "item": {
+                "_ansible_ignore_errors": null,
+                "_ansible_item_label": {
+                    "deployment": "dev",
+                    "group": "apps",
+                    "instance_name": "app2",
+                    "security_group_name": "apps"
+                },
+                "_ansible_item_result": true,
+                "_ansible_no_log": false,
+                "_ansible_parsed": true,
+                "changed": false,
+                "failed": false,
+                "id": "3602b5ed-edcf-4f5f-90af-8ab5c490e562",
+                "invocation": {
+                    "module_args": {
+                        "api_timeout": null,
+                        "auth": null,
+                        "auth_type": null,
+                        "auto_ip": true,
+                        "availability_zone": null,
+                        "boot_from_volume": false,
+                        "boot_volume": null,
+                        "cacert": null,
+                        "cert": null,
+                        "config_drive": false,
+                        "delete_fip": false,
+                        "flavor": "m2.small",
+                        "flavor_include": null,
+                        "flavor_ram": null,
+                        "floating_ip_pools": null,
+                        "floating_ips": null,
+                        "image": "rhel-guest",
+                        "image_exclude": "(deprecated)",
+                        "interface": "public",
+                        "key": null,
+                        "key_name": "ansible_ssh",
+                        "meta": {
+                            "deployment_name": "dev",
+                            "group": "apps"
+                        },
+                        "name": "app2",
+                        "network": null,
+                        "nics": [
+                            {
+                                "net-name": "int_network"
+                            }
+                        ],
+                        "region_name": null,
+                        "reuse_ips": true,
+                        "scheduler_hints": null,
+                        "security_groups": [
+                            "apps"
+                        ],
+                        "state": "present",
+                        "terminate_volume": false,
+                        "timeout": 180,
+                        "userdata": "#!/bin/bash\ncurl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub\ncat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys\ncurl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo\ncp /tmp/internal.repo /etc/yum.repos.d/internal.repo\n",
+                        "verify": null,
+                        "volume_size": false,
+                        "volumes": [],
+                        "wait": true
+                    }
+                },
+                "item": {
+                    "deployment": "dev",
+                    "group": "apps",
+                    "instance_name": "app2",
+                    "security_group_name": "apps"
+                },
+                "openstack": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000002",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2019-04-03T23:28:55.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "accessIPv4": "10.10.10.8",
+                    "accessIPv6": "",
+                    "addresses": {
+                        "int_network": [
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:da:af:c9",
+                                "OS-EXT-IPS:type": "fixed",
+                                "addr": "20.20.20.11",
+                                "version": 4
+                            },
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:da:af:c9",
+                                "OS-EXT-IPS:type": "floating",
+                                "addr": "10.10.10.8",
+                                "version": 4
+                            }
+                        ]
+                    },
+                    "adminPass": null,
+                    "az": "nova",
+                    "block_device_mapping": null,
+                    "cloud": "ospcloud",
+                    "config_drive": "",
+                    "created": "2019-04-03T23:28:11Z",
+                    "created_at": "2019-04-03T23:28:11Z",
+                    "disk_config": "MANUAL",
+                    "flavor": {
+                        "id": "2f5163fc-1ed4-4028-aaf9-a8fa7e3fb634",
+                        "name": "m2.small"
+                    },
+                    "has_config_drive": false,
+                    "hostId": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                    "host_id": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                    "hypervisor_hostname": "comp00.example.com",
+                    "id": "3602b5ed-edcf-4f5f-90af-8ab5c490e562",
+                    "image": {
+                        "id": "e4339a48-87fb-4ea9-8de6-6c8f894bd6b0",
+                        "name": "rhel-guest"
+                    },
+                    "instance_name": "instance-00000002",
+                    "interface_ip": "10.10.10.8",
+                    "key_name": "ansible_ssh",
+                    "launched_at": "2019-04-03T23:28:55.000000",
+                    "location": {
+                        "cloud": "ospcloud",
+                        "project": {
+                            "domain_id": null,
+                            "domain_name": null,
+                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "name": "admin"
+                        },
+                        "region_name": "RegionOne",
+                        "zone": "nova"
+                    },
+                    "metadata": {
+                        "deployment_name": "dev",
+                        "group": "apps"
+                    },
+                    "name": "app2",
+                    "networks": {},
+                    "os-extended-volumes:volumes_attached": [],
+                    "personality": null,
+                    "power_state": 1,
+                    "private_v4": "20.20.20.11",
+                    "progress": 0,
+                    "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "properties": {
+                        "OS-DCF:diskConfig": "MANUAL",
+                        "OS-EXT-AZ:availability_zone": "nova",
+                        "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                        "OS-EXT-SRV-ATTR:instance_name": "instance-00000002",
+                        "OS-EXT-SRV-ATTR:user_data": null,
+                        "OS-EXT-STS:power_state": 1,
+                        "OS-EXT-STS:task_state": null,
+                        "OS-EXT-STS:vm_state": "active",
+                        "OS-SCH-HNT:scheduler_hints": null,
+                        "OS-SRV-USG:launched_at": "2019-04-03T23:28:55.000000",
+                        "OS-SRV-USG:terminated_at": null,
+                        "os-extended-volumes:volumes_attached": []
+                    },
+                    "public_v4": "10.10.10.8",
+                    "public_v6": "",
+                    "region": "RegionOne",
+                    "scheduler_hints": null,
+                    "security_groups": [
+                        {
+                            "description": "ports_open",
+                            "id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                            "location": {
+                                "cloud": "ospcloud",
+                                "project": {
+                                    "domain_id": null,
+                                    "domain_name": null,
+                                    "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                    "name": "admin"
+                                },
+                                "region_name": "RegionOne",
+                                "zone": null
+                            },
+                            "name": "apps",
+                            "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "properties": {},
+                            "security_group_rules": [
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "38e4fda4-c7fa-48fb-a099-3f94d0bd5dda",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 8080,
+                                    "port_range_min": 8080,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "dadf69a8-0272-4552-84fc-33fdb9e8a9fc",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 22,
+                                    "port_range_min": 22,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                                    "tenant_id": ""
+                                }
+                            ],
+                            "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965"
+                        }
+                    ],
+                    "status": "ACTIVE",
+                    "tags": [],
+                    "task_state": null,
+                    "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "terminated_at": null,
+                    "updated": "2019-04-03T23:28:54Z",
+                    "user_data": null,
+                    "user_id": "97656d07875c40b38805582946989e49",
+                    "vm_state": "active",
+                    "volumes": []
+                },
+                "server": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000002",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2019-04-03T23:28:55.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "accessIPv4": "10.10.10.8",
+                    "accessIPv6": "",
+                    "addresses": {
+                        "int_network": [
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:da:af:c9",
+                                "OS-EXT-IPS:type": "fixed",
+                                "addr": "20.20.20.11",
+                                "version": 4
+                            },
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:da:af:c9",
+                                "OS-EXT-IPS:type": "floating",
+                                "addr": "10.10.10.8",
+                                "version": 4
+                            }
+                        ]
+                    },
+                    "adminPass": null,
+                    "az": "nova",
+                    "block_device_mapping": null,
+                    "cloud": "ospcloud",
+                    "config_drive": "",
+                    "created": "2019-04-03T23:28:11Z",
+                    "created_at": "2019-04-03T23:28:11Z",
+                    "disk_config": "MANUAL",
+                    "flavor": {
+                        "id": "2f5163fc-1ed4-4028-aaf9-a8fa7e3fb634",
+                        "name": "m2.small"
+                    },
+                    "has_config_drive": false,
+                    "hostId": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                    "host_id": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                    "hypervisor_hostname": "comp00.example.com",
+                    "id": "3602b5ed-edcf-4f5f-90af-8ab5c490e562",
+                    "image": {
+                        "id": "e4339a48-87fb-4ea9-8de6-6c8f894bd6b0",
+                        "name": "rhel-guest"
+                    },
+                    "instance_name": "instance-00000002",
+                    "interface_ip": "10.10.10.8",
+                    "key_name": "ansible_ssh",
+                    "launched_at": "2019-04-03T23:28:55.000000",
+                    "location": {
+                        "cloud": "ospcloud",
+                        "project": {
+                            "domain_id": null,
+                            "domain_name": null,
+                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "name": "admin"
+                        },
+                        "region_name": "RegionOne",
+                        "zone": "nova"
+                    },
+                    "metadata": {
+                        "deployment_name": "dev",
+                        "group": "apps"
+                    },
+                    "name": "app2",
+                    "networks": {},
+                    "os-extended-volumes:volumes_attached": [],
+                    "personality": null,
+                    "power_state": 1,
+                    "private_v4": "20.20.20.11",
+                    "progress": 0,
+                    "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "properties": {
+                        "OS-DCF:diskConfig": "MANUAL",
+                        "OS-EXT-AZ:availability_zone": "nova",
+                        "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                        "OS-EXT-SRV-ATTR:instance_name": "instance-00000002",
+                        "OS-EXT-SRV-ATTR:user_data": null,
+                        "OS-EXT-STS:power_state": 1,
+                        "OS-EXT-STS:task_state": null,
+                        "OS-EXT-STS:vm_state": "active",
+                        "OS-SCH-HNT:scheduler_hints": null,
+                        "OS-SRV-USG:launched_at": "2019-04-03T23:28:55.000000",
+                        "OS-SRV-USG:terminated_at": null,
+                        "os-extended-volumes:volumes_attached": []
+                    },
+                    "public_v4": "10.10.10.8",
+                    "public_v6": "",
+                    "region": "RegionOne",
+                    "scheduler_hints": null,
+                    "security_groups": [
+                        {
+                            "description": "ports_open",
+                            "id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                            "location": {
+                                "cloud": "ospcloud",
+                                "project": {
+                                    "domain_id": null,
+                                    "domain_name": null,
+                                    "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                    "name": "admin"
+                                },
+                                "region_name": "RegionOne",
+                                "zone": null
+                            },
+                            "name": "apps",
+                            "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "properties": {},
+                            "security_group_rules": [
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "38e4fda4-c7fa-48fb-a099-3f94d0bd5dda",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 8080,
+                                    "port_range_min": 8080,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "dadf69a8-0272-4552-84fc-33fdb9e8a9fc",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 22,
+                                    "port_range_min": 22,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "490c2184-6de5-4db4-8076-76a2b5a37f96",
+                                    "tenant_id": ""
+                                }
+                            ],
+                            "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965"
+                        }
+                    ],
+                    "status": "ACTIVE",
+                    "tags": [],
+                    "task_state": null,
+                    "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "terminated_at": null,
+                    "updated": "2019-04-03T23:28:54Z",
+                    "user_data": null,
+                    "user_id": "97656d07875c40b38805582946989e49",
+                    "vm_state": "active",
+                    "volumes": []
+                }
+            }
+        },
+        {
+            "_ansible_ignore_errors": null,
+            "_ansible_item_label": {
+                "_ansible_ignore_errors": null,
+                "_ansible_item_label": {
+                    "deployment": "dev",
+                    "group": "appdbs",
+                    "instance_name": "db",
+                    "security_group_name": "db"
+                },
+                "_ansible_item_result": true,
+                "_ansible_no_log": false,
+                "_ansible_parsed": true,
+                "changed": false,
+                "failed": false,
+                "id": "84403c39-6db0-4661-9bc2-3bfebbfb207e",
+                "invocation": {
+                    "module_args": {
+                        "api_timeout": null,
+                        "auth": null,
+                        "auth_type": null,
+                        "auto_ip": true,
+                        "availability_zone": null,
+                        "boot_from_volume": false,
+                        "boot_volume": null,
+                        "cacert": null,
+                        "cert": null,
+                        "config_drive": false,
+                        "delete_fip": false,
+                        "flavor": "m2.small",
+                        "flavor_include": null,
+                        "flavor_ram": null,
+                        "floating_ip_pools": null,
+                        "floating_ips": null,
+                        "image": "rhel-guest",
+                        "image_exclude": "(deprecated)",
+                        "interface": "public",
+                        "key": null,
+                        "key_name": "ansible_ssh",
+                        "meta": {
+                            "deployment_name": "dev",
+                            "group": "appdbs"
+                        },
+                        "name": "db",
+                        "network": null,
+                        "nics": [
+                            {
+                                "net-name": "int_network"
+                            }
+                        ],
+                        "region_name": null,
+                        "reuse_ips": true,
+                        "scheduler_hints": null,
+                        "security_groups": [
+                            "db"
+                        ],
+                        "state": "present",
+                        "terminate_volume": false,
+                        "timeout": 180,
+                        "userdata": "#!/bin/bash\ncurl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub\ncat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys\ncurl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo\ncp /tmp/internal.repo /etc/yum.repos.d/internal.repo\n",
+                        "verify": null,
+                        "volume_size": false,
+                        "volumes": [],
+                        "wait": true
+                    }
+                },
+                "item": {
+                    "deployment": "dev",
+                    "group": "appdbs",
+                    "instance_name": "db",
+                    "security_group_name": "db"
+                },
+                "openstack": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000003",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2019-04-03T23:32:12.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "accessIPv4": "10.10.10.11",
+                    "accessIPv6": "",
+                    "addresses": {
+                        "int_network": [
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:e9:44:26",
+                                "OS-EXT-IPS:type": "fixed",
+                                "addr": "20.20.20.9",
+                                "version": 4
+                            },
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:e9:44:26",
+                                "OS-EXT-IPS:type": "floating",
+                                "addr": "10.10.10.11",
+                                "version": 4
+                            }
+                        ]
+                    },
+                    "adminPass": null,
+                    "az": "nova",
+                    "block_device_mapping": null,
+                    "cloud": "ospcloud",
+                    "config_drive": "",
+                    "created": "2019-04-03T23:31:57Z",
+                    "created_at": "2019-04-03T23:31:57Z",
+                    "disk_config": "MANUAL",
+                    "flavor": {
+                        "id": "2f5163fc-1ed4-4028-aaf9-a8fa7e3fb634",
+                        "name": "m2.small"
+                    },
+                    "has_config_drive": false,
+                    "hostId": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                    "host_id": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                    "hypervisor_hostname": "comp01.example.com",
+                    "id": "84403c39-6db0-4661-9bc2-3bfebbfb207e",
+                    "image": {
+                        "id": "e4339a48-87fb-4ea9-8de6-6c8f894bd6b0",
+                        "name": "rhel-guest"
+                    },
+                    "instance_name": "instance-00000003",
+                    "interface_ip": "10.10.10.11",
+                    "key_name": "ansible_ssh",
+                    "launched_at": "2019-04-03T23:32:12.000000",
+                    "location": {
+                        "cloud": "ospcloud",
+                        "project": {
+                            "domain_id": null,
+                            "domain_name": null,
+                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "name": "admin"
+                        },
+                        "region_name": "RegionOne",
+                        "zone": "nova"
+                    },
+                    "metadata": {
+                        "deployment_name": "dev",
+                        "group": "appdbs"
+                    },
+                    "name": "db",
+                    "networks": {},
+                    "os-extended-volumes:volumes_attached": [],
+                    "personality": null,
+                    "power_state": 1,
+                    "private_v4": "20.20.20.9",
+                    "progress": 0,
+                    "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "properties": {
+                        "OS-DCF:diskConfig": "MANUAL",
+                        "OS-EXT-AZ:availability_zone": "nova",
+                        "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                        "OS-EXT-SRV-ATTR:instance_name": "instance-00000003",
+                        "OS-EXT-SRV-ATTR:user_data": null,
+                        "OS-EXT-STS:power_state": 1,
+                        "OS-EXT-STS:task_state": null,
+                        "OS-EXT-STS:vm_state": "active",
+                        "OS-SCH-HNT:scheduler_hints": null,
+                        "OS-SRV-USG:launched_at": "2019-04-03T23:32:12.000000",
+                        "OS-SRV-USG:terminated_at": null,
+                        "os-extended-volumes:volumes_attached": []
+                    },
+                    "public_v4": "10.10.10.11",
+                    "public_v6": "",
+                    "region": "RegionOne",
+                    "scheduler_hints": null,
+                    "security_groups": [
+                        {
+                            "description": "ports_open",
+                            "id": "a661b6be-791f-4034-a4f0-82dc5cda7e7b",
+                            "location": {
+                                "cloud": "ospcloud",
+                                "project": {
+                                    "domain_id": null,
+                                    "domain_name": null,
+                                    "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                    "name": "admin"
+                                },
+                                "region_name": "RegionOne",
+                                "zone": null
+                            },
+                            "name": "db",
+                            "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "properties": {},
+                            "security_group_rules": [
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "3416199d-490b-4d74-a21f-c62544449a2e",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 5432,
+                                    "port_range_min": 5432,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "20.20.20.0/24",
+                                    "security_group_id": "a661b6be-791f-4034-a4f0-82dc5cda7e7b",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "ef491526-4024-45ec-8019-9900f52cc3ef",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 22,
+                                    "port_range_min": 22,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "a661b6be-791f-4034-a4f0-82dc5cda7e7b",
+                                    "tenant_id": ""
+                                }
+                            ],
+                            "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965"
+                        }
+                    ],
+                    "status": "ACTIVE",
+                    "tags": [],
+                    "task_state": null,
+                    "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "terminated_at": null,
+                    "updated": "2019-04-03T23:32:11Z",
+                    "user_data": null,
+                    "user_id": "97656d07875c40b38805582946989e49",
+                    "vm_state": "active",
+                    "volumes": []
+                },
+                "server": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000003",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2019-04-03T23:32:12.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "accessIPv4": "10.10.10.11",
+                    "accessIPv6": "",
+                    "addresses": {
+                        "int_network": [
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:e9:44:26",
+                                "OS-EXT-IPS:type": "fixed",
+                                "addr": "20.20.20.9",
+                                "version": 4
+                            },
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:e9:44:26",
+                                "OS-EXT-IPS:type": "floating",
+                                "addr": "10.10.10.11",
+                                "version": 4
+                            }
+                        ]
+                    },
+                    "adminPass": null,
+                    "az": "nova",
+                    "block_device_mapping": null,
+                    "cloud": "ospcloud",
+                    "config_drive": "",
+                    "created": "2019-04-03T23:31:57Z",
+                    "created_at": "2019-04-03T23:31:57Z",
+                    "disk_config": "MANUAL",
+                    "flavor": {
+                        "id": "2f5163fc-1ed4-4028-aaf9-a8fa7e3fb634",
+                        "name": "m2.small"
+                    },
+                    "has_config_drive": false,
+                    "hostId": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                    "host_id": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                    "hypervisor_hostname": "comp01.example.com",
+                    "id": "84403c39-6db0-4661-9bc2-3bfebbfb207e",
+                    "image": {
+                        "id": "e4339a48-87fb-4ea9-8de6-6c8f894bd6b0",
+                        "name": "rhel-guest"
+                    },
+                    "instance_name": "instance-00000003",
+                    "interface_ip": "10.10.10.11",
+                    "key_name": "ansible_ssh",
+                    "launched_at": "2019-04-03T23:32:12.000000",
+                    "location": {
+                        "cloud": "ospcloud",
+                        "project": {
+                            "domain_id": null,
+                            "domain_name": null,
+                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "name": "admin"
+                        },
+                        "region_name": "RegionOne",
+                        "zone": "nova"
+                    },
+                    "metadata": {
+                        "deployment_name": "dev",
+                        "group": "appdbs"
+                    },
+                    "name": "db",
+                    "networks": {},
+                    "os-extended-volumes:volumes_attached": [],
+                    "personality": null,
+                    "power_state": 1,
+                    "private_v4": "20.20.20.9",
+                    "progress": 0,
+                    "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "properties": {
+                        "OS-DCF:diskConfig": "MANUAL",
+                        "OS-EXT-AZ:availability_zone": "nova",
+                        "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                        "OS-EXT-SRV-ATTR:instance_name": "instance-00000003",
+                        "OS-EXT-SRV-ATTR:user_data": null,
+                        "OS-EXT-STS:power_state": 1,
+                        "OS-EXT-STS:task_state": null,
+                        "OS-EXT-STS:vm_state": "active",
+                        "OS-SCH-HNT:scheduler_hints": null,
+                        "OS-SRV-USG:launched_at": "2019-04-03T23:32:12.000000",
+                        "OS-SRV-USG:terminated_at": null,
+                        "os-extended-volumes:volumes_attached": []
+                    },
+                    "public_v4": "10.10.10.11",
+                    "public_v6": "",
+                    "region": "RegionOne",
+                    "scheduler_hints": null,
+                    "security_groups": [
+                        {
+                            "description": "ports_open",
+                            "id": "a661b6be-791f-4034-a4f0-82dc5cda7e7b",
+                            "location": {
+                                "cloud": "ospcloud",
+                                "project": {
+                                    "domain_id": null,
+                                    "domain_name": null,
+                                    "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                    "name": "admin"
+                                },
+                                "region_name": "RegionOne",
+                                "zone": null
+                            },
+                            "name": "db",
+                            "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "properties": {},
+                            "security_group_rules": [
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "3416199d-490b-4d74-a21f-c62544449a2e",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 5432,
+                                    "port_range_min": 5432,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "20.20.20.0/24",
+                                    "security_group_id": "a661b6be-791f-4034-a4f0-82dc5cda7e7b",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "ef491526-4024-45ec-8019-9900f52cc3ef",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 22,
+                                    "port_range_min": 22,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "a661b6be-791f-4034-a4f0-82dc5cda7e7b",
+                                    "tenant_id": ""
+                                }
+                            ],
+                            "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965"
+                        }
+                    ],
+                    "status": "ACTIVE",
+                    "tags": [],
+                    "task_state": null,
+                    "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "terminated_at": null,
+                    "updated": "2019-04-03T23:32:11Z",
+                    "user_data": null,
+                    "user_id": "97656d07875c40b38805582946989e49",
+                    "vm_state": "active",
+                    "volumes": []
+                }
+            },
+            "_ansible_item_result": true,
+            "_ansible_no_log": false,
+            "_ansible_parsed": true,
+            "changed": false,
+            "failed": false,
+            "floating_ip": {
+                "attached": true,
+                "created_at": "2019-04-03T23:32:45Z",
+                "description": "",
+                "fixed_ip_address": "20.20.20.9",
+                "floating_ip_address": "10.10.10.11",
+                "floating_network_id": "cd2584de-6b10-4234-a65b-d646f9e860b5",
+                "id": "568f0251-865b-44df-92c8-23b8e60fdb59",
+                "location": {
+                    "cloud": "ospcloud",
+                    "project": {
+                        "domain_id": null,
+                        "domain_name": null,
+                        "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                        "name": "admin"
+                    },
+                    "region_name": "RegionOne",
+                    "zone": null
+                },
+                "network": "cd2584de-6b10-4234-a65b-d646f9e860b5",
+                "port": "6649f3c8-6596-4b37-a783-724ebb81e87d",
+                "port_id": "6649f3c8-6596-4b37-a783-724ebb81e87d",
+                "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "properties": {},
+                "revision_number": 2,
+                "router": "0572437f-921e-4561-a92d-6a914f1fd743",
+                "router_id": "0572437f-921e-4561-a92d-6a914f1fd743",
+                "status": "ACTIVE",
+                "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "updated_at": "2019-04-03T23:32:45Z"
+            },
+            "invocation": {
+                "module_args": {
+                    "api_timeout": null,
+                    "auth": null,
+                    "auth_type": null,
+                    "availability_zone": null,
+                    "cacert": null,
+                    "cert": null,
+                    "fixed_address": null,
+                    "floating_ip_address": null,
+                    "interface": "public",
+                    "key": null,
+                    "nat_destination": null,
+                    "network": "ext_network",
+                    "purge": false,
+                    "region_name": null,
+                    "reuse": true,
+                    "server": "db",
+                    "state": "present",
+                    "timeout": 180,
+                    "verify": null,
+                    "wait": true
+                }
+            },
+            "item": {
+                "_ansible_ignore_errors": null,
+                "_ansible_item_label": {
+                    "deployment": "dev",
+                    "group": "appdbs",
+                    "instance_name": "db",
+                    "security_group_name": "db"
+                },
+                "_ansible_item_result": true,
+                "_ansible_no_log": false,
+                "_ansible_parsed": true,
+                "changed": false,
+                "failed": false,
+                "id": "84403c39-6db0-4661-9bc2-3bfebbfb207e",
+                "invocation": {
+                    "module_args": {
+                        "api_timeout": null,
+                        "auth": null,
+                        "auth_type": null,
+                        "auto_ip": true,
+                        "availability_zone": null,
+                        "boot_from_volume": false,
+                        "boot_volume": null,
+                        "cacert": null,
+                        "cert": null,
+                        "config_drive": false,
+                        "delete_fip": false,
+                        "flavor": "m2.small",
+                        "flavor_include": null,
+                        "flavor_ram": null,
+                        "floating_ip_pools": null,
+                        "floating_ips": null,
+                        "image": "rhel-guest",
+                        "image_exclude": "(deprecated)",
+                        "interface": "public",
+                        "key": null,
+                        "key_name": "ansible_ssh",
+                        "meta": {
+                            "deployment_name": "dev",
+                            "group": "appdbs"
+                        },
+                        "name": "db",
+                        "network": null,
+                        "nics": [
+                            {
+                                "net-name": "int_network"
+                            }
+                        ],
+                        "region_name": null,
+                        "reuse_ips": true,
+                        "scheduler_hints": null,
+                        "security_groups": [
+                            "db"
+                        ],
+                        "state": "present",
+                        "terminate_volume": false,
+                        "timeout": 180,
+                        "userdata": "#!/bin/bash\ncurl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub\ncat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys\ncurl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo\ncp /tmp/internal.repo /etc/yum.repos.d/internal.repo\n",
+                        "verify": null,
+                        "volume_size": false,
+                        "volumes": [],
+                        "wait": true
+                    }
+                },
+                "item": {
+                    "deployment": "dev",
+                    "group": "appdbs",
+                    "instance_name": "db",
+                    "security_group_name": "db"
+                },
+                "openstack": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000003",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2019-04-03T23:32:12.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "accessIPv4": "10.10.10.11",
+                    "accessIPv6": "",
+                    "addresses": {
+                        "int_network": [
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:e9:44:26",
+                                "OS-EXT-IPS:type": "fixed",
+                                "addr": "20.20.20.9",
+                                "version": 4
+                            },
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:e9:44:26",
+                                "OS-EXT-IPS:type": "floating",
+                                "addr": "10.10.10.11",
+                                "version": 4
+                            }
+                        ]
+                    },
+                    "adminPass": null,
+                    "az": "nova",
+                    "block_device_mapping": null,
+                    "cloud": "ospcloud",
+                    "config_drive": "",
+                    "created": "2019-04-03T23:31:57Z",
+                    "created_at": "2019-04-03T23:31:57Z",
+                    "disk_config": "MANUAL",
+                    "flavor": {
+                        "id": "2f5163fc-1ed4-4028-aaf9-a8fa7e3fb634",
+                        "name": "m2.small"
+                    },
+                    "has_config_drive": false,
+                    "hostId": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                    "host_id": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                    "hypervisor_hostname": "comp01.example.com",
+                    "id": "84403c39-6db0-4661-9bc2-3bfebbfb207e",
+                    "image": {
+                        "id": "e4339a48-87fb-4ea9-8de6-6c8f894bd6b0",
+                        "name": "rhel-guest"
+                    },
+                    "instance_name": "instance-00000003",
+                    "interface_ip": "10.10.10.11",
+                    "key_name": "ansible_ssh",
+                    "launched_at": "2019-04-03T23:32:12.000000",
+                    "location": {
+                        "cloud": "ospcloud",
+                        "project": {
+                            "domain_id": null,
+                            "domain_name": null,
+                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "name": "admin"
+                        },
+                        "region_name": "RegionOne",
+                        "zone": "nova"
+                    },
+                    "metadata": {
+                        "deployment_name": "dev",
+                        "group": "appdbs"
+                    },
+                    "name": "db",
+                    "networks": {},
+                    "os-extended-volumes:volumes_attached": [],
+                    "personality": null,
+                    "power_state": 1,
+                    "private_v4": "20.20.20.9",
+                    "progress": 0,
+                    "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "properties": {
+                        "OS-DCF:diskConfig": "MANUAL",
+                        "OS-EXT-AZ:availability_zone": "nova",
+                        "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                        "OS-EXT-SRV-ATTR:instance_name": "instance-00000003",
+                        "OS-EXT-SRV-ATTR:user_data": null,
+                        "OS-EXT-STS:power_state": 1,
+                        "OS-EXT-STS:task_state": null,
+                        "OS-EXT-STS:vm_state": "active",
+                        "OS-SCH-HNT:scheduler_hints": null,
+                        "OS-SRV-USG:launched_at": "2019-04-03T23:32:12.000000",
+                        "OS-SRV-USG:terminated_at": null,
+                        "os-extended-volumes:volumes_attached": []
+                    },
+                    "public_v4": "10.10.10.11",
+                    "public_v6": "",
+                    "region": "RegionOne",
+                    "scheduler_hints": null,
+                    "security_groups": [
+                        {
+                            "description": "ports_open",
+                            "id": "a661b6be-791f-4034-a4f0-82dc5cda7e7b",
+                            "location": {
+                                "cloud": "ospcloud",
+                                "project": {
+                                    "domain_id": null,
+                                    "domain_name": null,
+                                    "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                    "name": "admin"
+                                },
+                                "region_name": "RegionOne",
+                                "zone": null
+                            },
+                            "name": "db",
+                            "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "properties": {},
+                            "security_group_rules": [
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "3416199d-490b-4d74-a21f-c62544449a2e",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 5432,
+                                    "port_range_min": 5432,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "20.20.20.0/24",
+                                    "security_group_id": "a661b6be-791f-4034-a4f0-82dc5cda7e7b",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "ef491526-4024-45ec-8019-9900f52cc3ef",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 22,
+                                    "port_range_min": 22,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "a661b6be-791f-4034-a4f0-82dc5cda7e7b",
+                                    "tenant_id": ""
+                                }
+                            ],
+                            "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965"
+                        }
+                    ],
+                    "status": "ACTIVE",
+                    "tags": [],
+                    "task_state": null,
+                    "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "terminated_at": null,
+                    "updated": "2019-04-03T23:32:11Z",
+                    "user_data": null,
+                    "user_id": "97656d07875c40b38805582946989e49",
+                    "vm_state": "active",
+                    "volumes": []
+                },
+                "server": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000003",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2019-04-03T23:32:12.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "accessIPv4": "10.10.10.11",
+                    "accessIPv6": "",
+                    "addresses": {
+                        "int_network": [
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:e9:44:26",
+                                "OS-EXT-IPS:type": "fixed",
+                                "addr": "20.20.20.9",
+                                "version": 4
+                            },
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:e9:44:26",
+                                "OS-EXT-IPS:type": "floating",
+                                "addr": "10.10.10.11",
+                                "version": 4
+                            }
+                        ]
+                    },
+                    "adminPass": null,
+                    "az": "nova",
+                    "block_device_mapping": null,
+                    "cloud": "ospcloud",
+                    "config_drive": "",
+                    "created": "2019-04-03T23:31:57Z",
+                    "created_at": "2019-04-03T23:31:57Z",
+                    "disk_config": "MANUAL",
+                    "flavor": {
+                        "id": "2f5163fc-1ed4-4028-aaf9-a8fa7e3fb634",
+                        "name": "m2.small"
+                    },
+                    "has_config_drive": false,
+                    "hostId": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                    "host_id": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                    "hypervisor_hostname": "comp01.example.com",
+                    "id": "84403c39-6db0-4661-9bc2-3bfebbfb207e",
+                    "image": {
+                        "id": "e4339a48-87fb-4ea9-8de6-6c8f894bd6b0",
+                        "name": "rhel-guest"
+                    },
+                    "instance_name": "instance-00000003",
+                    "interface_ip": "10.10.10.11",
+                    "key_name": "ansible_ssh",
+                    "launched_at": "2019-04-03T23:32:12.000000",
+                    "location": {
+                        "cloud": "ospcloud",
+                        "project": {
+                            "domain_id": null,
+                            "domain_name": null,
+                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "name": "admin"
+                        },
+                        "region_name": "RegionOne",
+                        "zone": "nova"
+                    },
+                    "metadata": {
+                        "deployment_name": "dev",
+                        "group": "appdbs"
+                    },
+                    "name": "db",
+                    "networks": {},
+                    "os-extended-volumes:volumes_attached": [],
+                    "personality": null,
+                    "power_state": 1,
+                    "private_v4": "20.20.20.9",
+                    "progress": 0,
+                    "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "properties": {
+                        "OS-DCF:diskConfig": "MANUAL",
+                        "OS-EXT-AZ:availability_zone": "nova",
+                        "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                        "OS-EXT-SRV-ATTR:instance_name": "instance-00000003",
+                        "OS-EXT-SRV-ATTR:user_data": null,
+                        "OS-EXT-STS:power_state": 1,
+                        "OS-EXT-STS:task_state": null,
+                        "OS-EXT-STS:vm_state": "active",
+                        "OS-SCH-HNT:scheduler_hints": null,
+                        "OS-SRV-USG:launched_at": "2019-04-03T23:32:12.000000",
+                        "OS-SRV-USG:terminated_at": null,
+                        "os-extended-volumes:volumes_attached": []
+                    },
+                    "public_v4": "10.10.10.11",
+                    "public_v6": "",
+                    "region": "RegionOne",
+                    "scheduler_hints": null,
+                    "security_groups": [
+                        {
+                            "description": "ports_open",
+                            "id": "a661b6be-791f-4034-a4f0-82dc5cda7e7b",
+                            "location": {
+                                "cloud": "ospcloud",
+                                "project": {
+                                    "domain_id": null,
+                                    "domain_name": null,
+                                    "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                    "name": "admin"
+                                },
+                                "region_name": "RegionOne",
+                                "zone": null
+                            },
+                            "name": "db",
+                            "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "properties": {},
+                            "security_group_rules": [
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "3416199d-490b-4d74-a21f-c62544449a2e",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 5432,
+                                    "port_range_min": 5432,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "20.20.20.0/24",
+                                    "security_group_id": "a661b6be-791f-4034-a4f0-82dc5cda7e7b",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "ef491526-4024-45ec-8019-9900f52cc3ef",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 22,
+                                    "port_range_min": 22,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "a661b6be-791f-4034-a4f0-82dc5cda7e7b",
+                                    "tenant_id": ""
+                                }
+                            ],
+                            "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965"
+                        }
+                    ],
+                    "status": "ACTIVE",
+                    "tags": [],
+                    "task_state": null,
+                    "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "terminated_at": null,
+                    "updated": "2019-04-03T23:32:11Z",
+                    "user_data": null,
+                    "user_id": "97656d07875c40b38805582946989e49",
+                    "vm_state": "active",
+                    "volumes": []
+                }
+            }
+        },
+        {
+            "_ansible_ignore_errors": null,
+            "_ansible_item_label": {
+                "_ansible_ignore_errors": null,
+                "_ansible_item_label": {
+                    "deployment": "dev",
+                    "group": "frontends",
+                    "instance_name": "frontend",
+                    "security_group_name": "frontend"
+                },
+                "_ansible_item_result": true,
+                "_ansible_no_log": false,
+                "_ansible_parsed": true,
+                "changed": false,
+                "failed": false,
+                "id": "b3b992ff-b20e-461d-a374-5a5fafc0da6f",
+                "invocation": {
+                    "module_args": {
+                        "api_timeout": null,
+                        "auth": null,
+                        "auth_type": null,
+                        "auto_ip": true,
+                        "availability_zone": null,
+                        "boot_from_volume": false,
+                        "boot_volume": null,
+                        "cacert": null,
+                        "cert": null,
+                        "config_drive": false,
+                        "delete_fip": false,
+                        "flavor": "m2.small",
+                        "flavor_include": null,
+                        "flavor_ram": null,
+                        "floating_ip_pools": null,
+                        "floating_ips": null,
+                        "image": "rhel-guest",
+                        "image_exclude": "(deprecated)",
+                        "interface": "public",
+                        "key": null,
+                        "key_name": "ansible_ssh",
+                        "meta": {
+                            "deployment_name": "dev",
+                            "group": "frontends"
+                        },
+                        "name": "frontend",
+                        "network": null,
+                        "nics": [
+                            {
+                                "net-name": "int_network"
+                            }
+                        ],
+                        "region_name": null,
+                        "reuse_ips": true,
+                        "scheduler_hints": null,
+                        "security_groups": [
+                            "frontend"
+                        ],
+                        "state": "present",
+                        "terminate_volume": false,
+                        "timeout": 180,
+                        "userdata": "#!/bin/bash\ncurl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub\ncat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys\ncurl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo\ncp /tmp/internal.repo /etc/yum.repos.d/internal.repo\n",
+                        "verify": null,
+                        "volume_size": false,
+                        "volumes": [],
+                        "wait": true
+                    }
+                },
+                "item": {
+                    "deployment": "dev",
+                    "group": "frontends",
+                    "instance_name": "frontend",
+                    "security_group_name": "frontend"
+                },
+                "openstack": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000004",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2019-04-03T23:32:31.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "accessIPv4": "10.10.10.14",
+                    "accessIPv6": "",
+                    "addresses": {
+                        "int_network": [
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:69:5e:e2",
+                                "OS-EXT-IPS:type": "fixed",
+                                "addr": "20.20.20.7",
+                                "version": 4
+                            },
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:69:5e:e2",
+                                "OS-EXT-IPS:type": "floating",
+                                "addr": "10.10.10.14",
+                                "version": 4
+                            }
+                        ]
+                    },
+                    "adminPass": null,
+                    "az": "nova",
+                    "block_device_mapping": null,
+                    "cloud": "ospcloud",
+                    "config_drive": "",
+                    "created": "2019-04-03T23:32:18Z",
+                    "created_at": "2019-04-03T23:32:18Z",
+                    "disk_config": "MANUAL",
+                    "flavor": {
+                        "id": "2f5163fc-1ed4-4028-aaf9-a8fa7e3fb634",
+                        "name": "m2.small"
+                    },
+                    "has_config_drive": false,
+                    "hostId": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                    "host_id": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                    "hypervisor_hostname": "comp00.example.com",
+                    "id": "b3b992ff-b20e-461d-a374-5a5fafc0da6f",
+                    "image": {
+                        "id": "e4339a48-87fb-4ea9-8de6-6c8f894bd6b0",
+                        "name": "rhel-guest"
+                    },
+                    "instance_name": "instance-00000004",
+                    "interface_ip": "10.10.10.14",
+                    "key_name": "ansible_ssh",
+                    "launched_at": "2019-04-03T23:32:31.000000",
+                    "location": {
+                        "cloud": "ospcloud",
+                        "project": {
+                            "domain_id": null,
+                            "domain_name": null,
+                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "name": "admin"
+                        },
+                        "region_name": "RegionOne",
+                        "zone": "nova"
+                    },
+                    "metadata": {
+                        "deployment_name": "dev",
+                        "group": "frontends"
+                    },
+                    "name": "frontend",
+                    "networks": {},
+                    "os-extended-volumes:volumes_attached": [],
+                    "personality": null,
+                    "power_state": 1,
+                    "private_v4": "20.20.20.7",
+                    "progress": 0,
+                    "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "properties": {
+                        "OS-DCF:diskConfig": "MANUAL",
+                        "OS-EXT-AZ:availability_zone": "nova",
+                        "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                        "OS-EXT-SRV-ATTR:instance_name": "instance-00000004",
+                        "OS-EXT-SRV-ATTR:user_data": null,
+                        "OS-EXT-STS:power_state": 1,
+                        "OS-EXT-STS:task_state": null,
+                        "OS-EXT-STS:vm_state": "active",
+                        "OS-SCH-HNT:scheduler_hints": null,
+                        "OS-SRV-USG:launched_at": "2019-04-03T23:32:31.000000",
+                        "OS-SRV-USG:terminated_at": null,
+                        "os-extended-volumes:volumes_attached": []
+                    },
+                    "public_v4": "10.10.10.14",
+                    "public_v6": "",
+                    "region": "RegionOne",
+                    "scheduler_hints": null,
+                    "security_groups": [
+                        {
+                            "description": "ports_open",
+                            "id": "1ffeb7eb-4bfc-46d0-8656-08845e5d516b",
+                            "location": {
+                                "cloud": "ospcloud",
+                                "project": {
+                                    "domain_id": null,
+                                    "domain_name": null,
+                                    "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                    "name": "admin"
+                                },
+                                "region_name": "RegionOne",
+                                "zone": null
+                            },
+                            "name": "frontend",
+                            "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "properties": {},
+                            "security_group_rules": [
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "8bcecf43-b46b-430d-b1fb-e966bad58938",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 443,
+                                    "port_range_min": 443,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "1ffeb7eb-4bfc-46d0-8656-08845e5d516b",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "ed095dd2-b313-4df6-ac39-4a4aa9da571b",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 80,
+                                    "port_range_min": 80,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "1ffeb7eb-4bfc-46d0-8656-08845e5d516b",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "f813c619-282d-4788-a5d5-a2c378bb4660",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 22,
+                                    "port_range_min": 22,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "1ffeb7eb-4bfc-46d0-8656-08845e5d516b",
+                                    "tenant_id": ""
+                                }
+                            ],
+                            "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965"
+                        }
+                    ],
+                    "status": "ACTIVE",
+                    "tags": [],
+                    "task_state": null,
+                    "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "terminated_at": null,
+                    "updated": "2019-04-03T23:32:30Z",
+                    "user_data": null,
+                    "user_id": "97656d07875c40b38805582946989e49",
+                    "vm_state": "active",
+                    "volumes": []
+                },
+                "server": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000004",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2019-04-03T23:32:31.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "accessIPv4": "10.10.10.14",
+                    "accessIPv6": "",
+                    "addresses": {
+                        "int_network": [
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:69:5e:e2",
+                                "OS-EXT-IPS:type": "fixed",
+                                "addr": "20.20.20.7",
+                                "version": 4
+                            },
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:69:5e:e2",
+                                "OS-EXT-IPS:type": "floating",
+                                "addr": "10.10.10.14",
+                                "version": 4
+                            }
+                        ]
+                    },
+                    "adminPass": null,
+                    "az": "nova",
+                    "block_device_mapping": null,
+                    "cloud": "ospcloud",
+                    "config_drive": "",
+                    "created": "2019-04-03T23:32:18Z",
+                    "created_at": "2019-04-03T23:32:18Z",
+                    "disk_config": "MANUAL",
+                    "flavor": {
+                        "id": "2f5163fc-1ed4-4028-aaf9-a8fa7e3fb634",
+                        "name": "m2.small"
+                    },
+                    "has_config_drive": false,
+                    "hostId": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                    "host_id": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                    "hypervisor_hostname": "comp00.example.com",
+                    "id": "b3b992ff-b20e-461d-a374-5a5fafc0da6f",
+                    "image": {
+                        "id": "e4339a48-87fb-4ea9-8de6-6c8f894bd6b0",
+                        "name": "rhel-guest"
+                    },
+                    "instance_name": "instance-00000004",
+                    "interface_ip": "10.10.10.14",
+                    "key_name": "ansible_ssh",
+                    "launched_at": "2019-04-03T23:32:31.000000",
+                    "location": {
+                        "cloud": "ospcloud",
+                        "project": {
+                            "domain_id": null,
+                            "domain_name": null,
+                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "name": "admin"
+                        },
+                        "region_name": "RegionOne",
+                        "zone": "nova"
+                    },
+                    "metadata": {
+                        "deployment_name": "dev",
+                        "group": "frontends"
+                    },
+                    "name": "frontend",
+                    "networks": {},
+                    "os-extended-volumes:volumes_attached": [],
+                    "personality": null,
+                    "power_state": 1,
+                    "private_v4": "20.20.20.7",
+                    "progress": 0,
+                    "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "properties": {
+                        "OS-DCF:diskConfig": "MANUAL",
+                        "OS-EXT-AZ:availability_zone": "nova",
+                        "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                        "OS-EXT-SRV-ATTR:instance_name": "instance-00000004",
+                        "OS-EXT-SRV-ATTR:user_data": null,
+                        "OS-EXT-STS:power_state": 1,
+                        "OS-EXT-STS:task_state": null,
+                        "OS-EXT-STS:vm_state": "active",
+                        "OS-SCH-HNT:scheduler_hints": null,
+                        "OS-SRV-USG:launched_at": "2019-04-03T23:32:31.000000",
+                        "OS-SRV-USG:terminated_at": null,
+                        "os-extended-volumes:volumes_attached": []
+                    },
+                    "public_v4": "10.10.10.14",
+                    "public_v6": "",
+                    "region": "RegionOne",
+                    "scheduler_hints": null,
+                    "security_groups": [
+                        {
+                            "description": "ports_open",
+                            "id": "1ffeb7eb-4bfc-46d0-8656-08845e5d516b",
+                            "location": {
+                                "cloud": "ospcloud",
+                                "project": {
+                                    "domain_id": null,
+                                    "domain_name": null,
+                                    "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                    "name": "admin"
+                                },
+                                "region_name": "RegionOne",
+                                "zone": null
+                            },
+                            "name": "frontend",
+                            "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "properties": {},
+                            "security_group_rules": [
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "8bcecf43-b46b-430d-b1fb-e966bad58938",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 443,
+                                    "port_range_min": 443,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "1ffeb7eb-4bfc-46d0-8656-08845e5d516b",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "ed095dd2-b313-4df6-ac39-4a4aa9da571b",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 80,
+                                    "port_range_min": 80,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "1ffeb7eb-4bfc-46d0-8656-08845e5d516b",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "f813c619-282d-4788-a5d5-a2c378bb4660",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 22,
+                                    "port_range_min": 22,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "1ffeb7eb-4bfc-46d0-8656-08845e5d516b",
+                                    "tenant_id": ""
+                                }
+                            ],
+                            "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965"
+                        }
+                    ],
+                    "status": "ACTIVE",
+                    "tags": [],
+                    "task_state": null,
+                    "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "terminated_at": null,
+                    "updated": "2019-04-03T23:32:30Z",
+                    "user_data": null,
+                    "user_id": "97656d07875c40b38805582946989e49",
+                    "vm_state": "active",
+                    "volumes": []
+                }
+            },
+            "_ansible_item_result": true,
+            "_ansible_no_log": false,
+            "_ansible_parsed": true,
+            "changed": false,
+            "failed": false,
+            "floating_ip": {
+                "attached": true,
+                "created_at": "2019-04-03T23:32:49Z",
+                "description": "",
+                "fixed_ip_address": "20.20.20.7",
+                "floating_ip_address": "10.10.10.14",
+                "floating_network_id": "cd2584de-6b10-4234-a65b-d646f9e860b5",
+                "id": "2ad31e91-92b1-48a4-a122-797594d86862",
+                "location": {
+                    "cloud": "ospcloud",
+                    "project": {
+                        "domain_id": null,
+                        "domain_name": null,
+                        "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                        "name": "admin"
+                    },
+                    "region_name": "RegionOne",
+                    "zone": null
+                },
+                "network": "cd2584de-6b10-4234-a65b-d646f9e860b5",
+                "port": "2035081b-e325-4a0f-809e-46a8850b0a5c",
+                "port_id": "2035081b-e325-4a0f-809e-46a8850b0a5c",
+                "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "properties": {},
+                "revision_number": 2,
+                "router": "0572437f-921e-4561-a92d-6a914f1fd743",
+                "router_id": "0572437f-921e-4561-a92d-6a914f1fd743",
+                "status": "ACTIVE",
+                "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "updated_at": "2019-04-03T23:32:49Z"
+            },
+            "invocation": {
+                "module_args": {
+                    "api_timeout": null,
+                    "auth": null,
+                    "auth_type": null,
+                    "availability_zone": null,
+                    "cacert": null,
+                    "cert": null,
+                    "fixed_address": null,
+                    "floating_ip_address": null,
+                    "interface": "public",
+                    "key": null,
+                    "nat_destination": null,
+                    "network": "ext_network",
+                    "purge": false,
+                    "region_name": null,
+                    "reuse": true,
+                    "server": "frontend",
+                    "state": "present",
+                    "timeout": 180,
+                    "verify": null,
+                    "wait": true
+                }
+            },
+            "item": {
+                "_ansible_ignore_errors": null,
+                "_ansible_item_label": {
+                    "deployment": "dev",
+                    "group": "frontends",
+                    "instance_name": "frontend",
+                    "security_group_name": "frontend"
+                },
+                "_ansible_item_result": true,
+                "_ansible_no_log": false,
+                "_ansible_parsed": true,
+                "changed": false,
+                "failed": false,
+                "id": "b3b992ff-b20e-461d-a374-5a5fafc0da6f",
+                "invocation": {
+                    "module_args": {
+                        "api_timeout": null,
+                        "auth": null,
+                        "auth_type": null,
+                        "auto_ip": true,
+                        "availability_zone": null,
+                        "boot_from_volume": false,
+                        "boot_volume": null,
+                        "cacert": null,
+                        "cert": null,
+                        "config_drive": false,
+                        "delete_fip": false,
+                        "flavor": "m2.small",
+                        "flavor_include": null,
+                        "flavor_ram": null,
+                        "floating_ip_pools": null,
+                        "floating_ips": null,
+                        "image": "rhel-guest",
+                        "image_exclude": "(deprecated)",
+                        "interface": "public",
+                        "key": null,
+                        "key_name": "ansible_ssh",
+                        "meta": {
+                            "deployment_name": "dev",
+                            "group": "frontends"
+                        },
+                        "name": "frontend",
+                        "network": null,
+                        "nics": [
+                            {
+                                "net-name": "int_network"
+                            }
+                        ],
+                        "region_name": null,
+                        "reuse_ips": true,
+                        "scheduler_hints": null,
+                        "security_groups": [
+                            "frontend"
+                        ],
+                        "state": "present",
+                        "terminate_volume": false,
+                        "timeout": 180,
+                        "userdata": "#!/bin/bash\ncurl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub\ncat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys\ncurl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo\ncp /tmp/internal.repo /etc/yum.repos.d/internal.repo\n",
+                        "verify": null,
+                        "volume_size": false,
+                        "volumes": [],
+                        "wait": true
+                    }
+                },
+                "item": {
+                    "deployment": "dev",
+                    "group": "frontends",
+                    "instance_name": "frontend",
+                    "security_group_name": "frontend"
+                },
+                "openstack": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000004",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2019-04-03T23:32:31.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "accessIPv4": "10.10.10.14",
+                    "accessIPv6": "",
+                    "addresses": {
+                        "int_network": [
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:69:5e:e2",
+                                "OS-EXT-IPS:type": "fixed",
+                                "addr": "20.20.20.7",
+                                "version": 4
+                            },
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:69:5e:e2",
+                                "OS-EXT-IPS:type": "floating",
+                                "addr": "10.10.10.14",
+                                "version": 4
+                            }
+                        ]
+                    },
+                    "adminPass": null,
+                    "az": "nova",
+                    "block_device_mapping": null,
+                    "cloud": "ospcloud",
+                    "config_drive": "",
+                    "created": "2019-04-03T23:32:18Z",
+                    "created_at": "2019-04-03T23:32:18Z",
+                    "disk_config": "MANUAL",
+                    "flavor": {
+                        "id": "2f5163fc-1ed4-4028-aaf9-a8fa7e3fb634",
+                        "name": "m2.small"
+                    },
+                    "has_config_drive": false,
+                    "hostId": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                    "host_id": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                    "hypervisor_hostname": "comp00.example.com",
+                    "id": "b3b992ff-b20e-461d-a374-5a5fafc0da6f",
+                    "image": {
+                        "id": "e4339a48-87fb-4ea9-8de6-6c8f894bd6b0",
+                        "name": "rhel-guest"
+                    },
+                    "instance_name": "instance-00000004",
+                    "interface_ip": "10.10.10.14",
+                    "key_name": "ansible_ssh",
+                    "launched_at": "2019-04-03T23:32:31.000000",
+                    "location": {
+                        "cloud": "ospcloud",
+                        "project": {
+                            "domain_id": null,
+                            "domain_name": null,
+                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "name": "admin"
+                        },
+                        "region_name": "RegionOne",
+                        "zone": "nova"
+                    },
+                    "metadata": {
+                        "deployment_name": "dev",
+                        "group": "frontends"
+                    },
+                    "name": "frontend",
+                    "networks": {},
+                    "os-extended-volumes:volumes_attached": [],
+                    "personality": null,
+                    "power_state": 1,
+                    "private_v4": "20.20.20.7",
+                    "progress": 0,
+                    "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "properties": {
+                        "OS-DCF:diskConfig": "MANUAL",
+                        "OS-EXT-AZ:availability_zone": "nova",
+                        "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                        "OS-EXT-SRV-ATTR:instance_name": "instance-00000004",
+                        "OS-EXT-SRV-ATTR:user_data": null,
+                        "OS-EXT-STS:power_state": 1,
+                        "OS-EXT-STS:task_state": null,
+                        "OS-EXT-STS:vm_state": "active",
+                        "OS-SCH-HNT:scheduler_hints": null,
+                        "OS-SRV-USG:launched_at": "2019-04-03T23:32:31.000000",
+                        "OS-SRV-USG:terminated_at": null,
+                        "os-extended-volumes:volumes_attached": []
+                    },
+                    "public_v4": "10.10.10.14",
+                    "public_v6": "",
+                    "region": "RegionOne",
+                    "scheduler_hints": null,
+                    "security_groups": [
+                        {
+                            "description": "ports_open",
+                            "id": "1ffeb7eb-4bfc-46d0-8656-08845e5d516b",
+                            "location": {
+                                "cloud": "ospcloud",
+                                "project": {
+                                    "domain_id": null,
+                                    "domain_name": null,
+                                    "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                    "name": "admin"
+                                },
+                                "region_name": "RegionOne",
+                                "zone": null
+                            },
+                            "name": "frontend",
+                            "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "properties": {},
+                            "security_group_rules": [
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "8bcecf43-b46b-430d-b1fb-e966bad58938",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 443,
+                                    "port_range_min": 443,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "1ffeb7eb-4bfc-46d0-8656-08845e5d516b",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "ed095dd2-b313-4df6-ac39-4a4aa9da571b",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 80,
+                                    "port_range_min": 80,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "1ffeb7eb-4bfc-46d0-8656-08845e5d516b",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "f813c619-282d-4788-a5d5-a2c378bb4660",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 22,
+                                    "port_range_min": 22,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "1ffeb7eb-4bfc-46d0-8656-08845e5d516b",
+                                    "tenant_id": ""
+                                }
+                            ],
+                            "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965"
+                        }
+                    ],
+                    "status": "ACTIVE",
+                    "tags": [],
+                    "task_state": null,
+                    "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "terminated_at": null,
+                    "updated": "2019-04-03T23:32:30Z",
+                    "user_data": null,
+                    "user_id": "97656d07875c40b38805582946989e49",
+                    "vm_state": "active",
+                    "volumes": []
+                },
+                "server": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000004",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2019-04-03T23:32:31.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "accessIPv4": "10.10.10.14",
+                    "accessIPv6": "",
+                    "addresses": {
+                        "int_network": [
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:69:5e:e2",
+                                "OS-EXT-IPS:type": "fixed",
+                                "addr": "20.20.20.7",
+                                "version": 4
+                            },
+                            {
+                                "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:69:5e:e2",
+                                "OS-EXT-IPS:type": "floating",
+                                "addr": "10.10.10.14",
+                                "version": 4
+                            }
+                        ]
+                    },
+                    "adminPass": null,
+                    "az": "nova",
+                    "block_device_mapping": null,
+                    "cloud": "ospcloud",
+                    "config_drive": "",
+                    "created": "2019-04-03T23:32:18Z",
+                    "created_at": "2019-04-03T23:32:18Z",
+                    "disk_config": "MANUAL",
+                    "flavor": {
+                        "id": "2f5163fc-1ed4-4028-aaf9-a8fa7e3fb634",
+                        "name": "m2.small"
+                    },
+                    "has_config_drive": false,
+                    "hostId": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                    "host_id": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                    "hypervisor_hostname": "comp00.example.com",
+                    "id": "b3b992ff-b20e-461d-a374-5a5fafc0da6f",
+                    "image": {
+                        "id": "e4339a48-87fb-4ea9-8de6-6c8f894bd6b0",
+                        "name": "rhel-guest"
+                    },
+                    "instance_name": "instance-00000004",
+                    "interface_ip": "10.10.10.14",
+                    "key_name": "ansible_ssh",
+                    "launched_at": "2019-04-03T23:32:31.000000",
+                    "location": {
+                        "cloud": "ospcloud",
+                        "project": {
+                            "domain_id": null,
+                            "domain_name": null,
+                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "name": "admin"
+                        },
+                        "region_name": "RegionOne",
+                        "zone": "nova"
+                    },
+                    "metadata": {
+                        "deployment_name": "dev",
+                        "group": "frontends"
+                    },
+                    "name": "frontend",
+                    "networks": {},
+                    "os-extended-volumes:volumes_attached": [],
+                    "personality": null,
+                    "power_state": 1,
+                    "private_v4": "20.20.20.7",
+                    "progress": 0,
+                    "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "properties": {
+                        "OS-DCF:diskConfig": "MANUAL",
+                        "OS-EXT-AZ:availability_zone": "nova",
+                        "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                        "OS-EXT-SRV-ATTR:instance_name": "instance-00000004",
+                        "OS-EXT-SRV-ATTR:user_data": null,
+                        "OS-EXT-STS:power_state": 1,
+                        "OS-EXT-STS:task_state": null,
+                        "OS-EXT-STS:vm_state": "active",
+                        "OS-SCH-HNT:scheduler_hints": null,
+                        "OS-SRV-USG:launched_at": "2019-04-03T23:32:31.000000",
+                        "OS-SRV-USG:terminated_at": null,
+                        "os-extended-volumes:volumes_attached": []
+                    },
+                    "public_v4": "10.10.10.14",
+                    "public_v6": "",
+                    "region": "RegionOne",
+                    "scheduler_hints": null,
+                    "security_groups": [
+                        {
+                            "description": "ports_open",
+                            "id": "1ffeb7eb-4bfc-46d0-8656-08845e5d516b",
+                            "location": {
+                                "cloud": "ospcloud",
+                                "project": {
+                                    "domain_id": null,
+                                    "domain_name": null,
+                                    "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                    "name": "admin"
+                                },
+                                "region_name": "RegionOne",
+                                "zone": null
+                            },
+                            "name": "frontend",
+                            "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                            "properties": {},
+                            "security_group_rules": [
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "8bcecf43-b46b-430d-b1fb-e966bad58938",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 443,
+                                    "port_range_min": 443,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "1ffeb7eb-4bfc-46d0-8656-08845e5d516b",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "ed095dd2-b313-4df6-ac39-4a4aa9da571b",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 80,
+                                    "port_range_min": 80,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "1ffeb7eb-4bfc-46d0-8656-08845e5d516b",
+                                    "tenant_id": ""
+                                },
+                                {
+                                    "direction": "ingress",
+                                    "ethertype": "IPv4",
+                                    "group": {},
+                                    "id": "f813c619-282d-4788-a5d5-a2c378bb4660",
+                                    "location": {
+                                        "cloud": "ospcloud",
+                                        "project": {
+                                            "domain_id": null,
+                                            "domain_name": null,
+                                            "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                                            "name": "admin"
+                                        },
+                                        "region_name": "RegionOne",
+                                        "zone": null
+                                    },
+                                    "port_range_max": 22,
+                                    "port_range_min": 22,
+                                    "project_id": "",
+                                    "properties": {
+                                        "group": {}
+                                    },
+                                    "protocol": "tcp",
+                                    "remote_group_id": null,
+                                    "remote_ip_prefix": "0.0.0.0/0",
+                                    "security_group_id": "1ffeb7eb-4bfc-46d0-8656-08845e5d516b",
+                                    "tenant_id": ""
+                                }
+                            ],
+                            "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965"
+                        }
+                    ],
+                    "status": "ACTIVE",
+                    "tags": [],
+                    "task_state": null,
+                    "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                    "terminated_at": null,
+                    "updated": "2019-04-03T23:32:30Z",
+                    "user_data": null,
+                    "user_id": "97656d07875c40b38805582946989e49",
+                    "vm_state": "active",
+                    "volumes": []
+                }
+            }
+        }
+    ]
+}
