@@ -1,60 +1,27 @@
-== README OpenStack Lab
+== Complete Solution to fully deploy the Infrastructure to OpenStack from your Laptop
 
-=== Overview
+This will fully deploy the entire infrastructure up to the point you will have
+the 4 *empty* RHEL VMs running
 
-Spins up a 3 tier lab environment on OpenStack and then plays three-tier app against it.
+=== SetUp:
 
-Current directory setup (July 2018)
-- 1_OpenStack, the 1st stage i.e. bring up OpenStack Infrastrucure
-- 2_OpenStack, create an In-memory Inventory and run "Good Ansible"
-- OSP_Master, WIP, combine the above 2 stages
-- ec2.demo, demo a dynamic inventory using sc2.py and ec2.ini
+You need to do the following step:
 
-TODO/Wish list
-* Tidy Prakhar's OpenStack Playbooks and roles
-** Make sure name: used everywhere
-** Make sure name: meaningful
-** Tody up white spacing etc
-** Rename OSP Facts role (in-memory inventory), misleading?
-** Collapse the 2 add_host tasks into 1?
-** Create a junja2 template to "print out" the inventory
-* Create a playbook/role to do initial setup
+----
+. In your `ssh.cfg` change the value of <YOUR_GUID> for workstation
+[source,ini]
+----
+Host workstation
+  Hostname workstation-<YOUR_GUID>.rhpds.opentlc.com
+----
 
-Note: Entire lab can be run from laptop
+=== Usage
 
-=== Running the Lab
+[source,bash]
+----
+ansible-playbook site.yml -e GUID=<YOUR_GUID>
+----
 
-4 main stages
+=== To Do
 
-=== Workstation Preperation
-
-* Initial setup on workstation-GUID
-** Setup workstation
-*** setup the repos
-*** install utilities and packages
-*** install shade (OpenStack Python Library)
-*** download and setup ssh key for cloud-user (IMPORTANT)!
-*** create clouds.yml and verify openstack hypervisors are running
-*** download RHEL image into openstack
-*** verify openstack is working
-
-=== Laptop Preperation
-* Download key and set permissions
-* Download / create the OpenStack Playbooks
-* Create the flavor
-* Run `ansible-playbook site.yml`
-
-=== Create the OpenStack VMs
-
-(my Step-1 Playbooks)
-
-Verify they exist/work: `ssh -F ssh.cfg 10.10.10.4`
-
-=== Create 3-Tier App
-
-_Original source: git clone https://github.com/prakhar1985/good-ansible.git
-** just needs inventory and ssh.cfg updated with guid
-
-Jumpbox prepares OpenStack
-
-
+* Finish tok-instance role (looping through instances)
