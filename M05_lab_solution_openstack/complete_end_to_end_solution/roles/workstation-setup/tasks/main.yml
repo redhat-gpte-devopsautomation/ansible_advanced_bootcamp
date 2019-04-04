@@ -34,22 +34,22 @@
     user: cloud-user
     key: "{{ lookup('url', 'http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub') }}"
 
-- name: Setup RHEL QCOW image for instances
-  block:
-
-    - name: Download RHEL QCOW image
-      get_url:
-        url: http://www.opentlc.com/download/osp_advanced_networking/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
-        dest: /root/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
-
-    - name: Load RHEL QCOW image into glance
-      os_image:
-        cloud: ospcloud
-        name: rhel-guest
-        container_format: bare
-        disk_format: qcow2
-        state: present
-        filename: /root/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
-  tags:      
-    - setup-rhel-image
+#- name: Setup RHEL QCOW image for instances
+#  block:
+#
+#    - name: Download RHEL QCOW image
+#      get_url:
+#        url: http://www.opentlc.com/download/osp_advanced_networking/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
+#        dest: /root/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
+#
+#    - name: Load RHEL QCOW image into glance
+#      os_image:
+#        cloud: ospcloud
+#        name: rhel-guest
+#        container_format: bare
+#        disk_format: qcow2
+#        state: present
+#        filename: /root/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
+#  tags:      
+#    - setup-rhel-image
 ...
