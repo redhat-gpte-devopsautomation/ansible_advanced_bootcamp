@@ -17,15 +17,16 @@
       curl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
       cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
   loop: "{{ openstack_instances }}"      
-  async: 900
-  poll: 0
   register: r_instances
 
-- name: Wait for OSP instance creation to complete
-  async_status: jid={{ item.ansible_job_id }}
-  register: r_wait
-  until: r_wait.finished
-  retries: 900
+- name: output register r_instances  
+  debug:
+    verbosity: 2  
+    msg: 
+      - "Register results are {{ item.changed}}"
+      - "Register results are {{ item._ansible_item_result }}"
+      - "Register results are {{ item.item.instance_name }}"
+      - "VM State results are {{ item.server.vm_state }}"
   loop: "{{ r_instances.results }}"
 
 - name: Add floating IP to instances
@@ -40,9 +41,26 @@
   loop: "{{ r_instances.results }}"
   register: r_floating_ips
 
+- name: debug task to output register  
+  debug:
+    msg: " instance ip register is {{ r_floating_ips.results }}"
+    verbosity: 2
+    
+- name: print out the value of r_floating_ips
+  template:
+    src: floating_ip.j2
+    dest: floating_ip.json
+  delegate_to: localhost
+
+- name: Show public IP
+  debug: 
+    verbosity: 2
+    msg: "Floating IP is {{ item.item }}"
+  loop: "{{ r_floating_ips.results }}"
+  
 - name: Wait for servers by name to be available
   wait_for:
-    host: "{{ item.floating_ip.floating_ip_address }}"
+    host: "{{ item.item.openstack.public_v4 }}"
     port: 22
     search_regex: OpenSSH
     timeout: 600

@@ -1,4 +1,10 @@
 ---
+- name: Downgrade chocolatey to fix ansible bug
+  win_chocolatey:       
+    name: chocolatey       
+    state: downgrade       
+    version: 0.10.11
+
 - name: Install Windows package
   win_chocolatey:
     name: "{{ package_name }}"
