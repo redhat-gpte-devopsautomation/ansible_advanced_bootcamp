@@ -6,14 +6,15 @@
 
   tasks:
 
-    - name: setup ttyless sudo for pipelining 
+    - name: Setup ttyless sudo for pipelining 
       lineinfile:
         dest: /etc/sudoers
         line: 'Defaults requiretty'
         state: absent
 
-    - name: enable repos for three-tier-app
+    - name: Enable repos for three-tier-app
       template:
         src: ../templates/open_three-tier-app.repo
         dest: /etc/yum.repos.d/open_three-tier-app.repo
         mode: 0644
+...

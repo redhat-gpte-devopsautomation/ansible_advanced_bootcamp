@@ -1,3 +1,6 @@
+[all:vars]
+GUID="{{ lookup('env', 'GUID') }}"
+
 [jumpbox]
 bastion 
 

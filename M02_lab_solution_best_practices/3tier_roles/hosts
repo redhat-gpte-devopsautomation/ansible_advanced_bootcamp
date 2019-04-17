@@ -1,5 +1,8 @@
+[all:vars]
+GUID="{{ lookup('env', 'GUID') }}"
+
 [jumpbox]
-bastion 
+bastion # ansible_host=bastion."{{ GUID }}".example.opentlc.com
 
 [frontends]
 frontend1 ansible_host=frontend1."{{ GUID }}".internal

@@ -1,0 +1,23 @@
+---
+- name: Fetch and install ssh key for lab
+  hosts: jumpbox
+  become: true
+  gather_facts: false
+  vars:
+    key: "{{ GUID }}key.pem"
+
+  tasks:
+
+    - name: Fetch key from jumpbox
+      fetch:
+        src: "/root/.ssh/{{ key }}"
+        dest: "~/.ssh/{{ key }}"
+        flat: yes
+
+    - name: Set permissions on ssh key
+      file:
+        path: "~/.ssh/{{ key }}"
+        mode: 0400
+      delegate_to: localhost  
+      become: false
+...
