@@ -1,0 +1,51 @@
+#
+# Inventory file example using
+#
+# This file uses externally reachable FQDNs 
+#
+# NOTES:
+#
+# 1) This file assumes you have exported TOWER_GUID and looks it up:
+# export TOWER_GUID=<your GUID here>
+# alternative approached are to:
+#    hard code it :( i.e in this file: GUID=<your GUID>
+#    supply it via -e (but this is NOT supported by ansible-inventory cmd
+# 
+# Enabling this inventory:
+# Set in ansible.cfg: inventory = inventories/foo
+
+[all:vars]
+GUID="{{ lookup('env', 'TOWER_GUID') }}" # Or set manually or via -e GUID=abcd
+
+[jumpbox] # bastion is resolved via ssh.cfg, set in ansible.cfg by: ssh_args  = -F ssh.cfg
+bastion 
+
+[towers]
+tower1 ansible_host=tower1."{{ GUID }}".example.opentlc.com
+tower2 ansible_host=tower3."{{ GUID }}".example.opentlc.com
+tower3 ansible_host=tower2."{{ GUID }}".example.opentlc.com
+
+[support] # postgres primary and secondary
+support1 ansible_host=support2."{{ GUID }}".example.opentlc.com
+support2 ansible_host=support1."{{ GUID }}".example.opentlc.com
+
+[windows] # Windows (Active Directory) server
+ad1 ansible_host=ad1."{{ GUID }}".example.opentlc.com
+
+[windows:vars]
+ansible_user=Administrator
+ansible_password=jVMijRwLbI02gFCo2xkjlZ9lxEA7bm7zgg==
+ansible_connection=psrp
+ansible_psrp_auth=basic
+ansible_psrp_cert_validation=ignore
+ansible_become=false
+
+[internal:children]
+towers
+windows
+support
+
+[internal:vars]
+timeout=60
+ansible_become=yes
+ansible_user=ec2-user
