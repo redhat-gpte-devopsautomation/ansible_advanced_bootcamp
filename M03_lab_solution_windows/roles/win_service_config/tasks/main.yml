@@ -1,15 +1,15 @@
 ---
 - name: Downgrade chocolatey to fix ansible bug
-  win_chocolatey:       
-    name: chocolatey       
-    state: downgrade       
+  win_chocolatey:
+    name: chocolatey
+    state: downgrade
     version: 0.10.11
 
 - name: Install Windows package
   win_chocolatey:
+    state: present
     name: "{{ package_name }}"
     params: "{{ parameters }}"
-    state: latest
   when: ansible_distribution == "Microsoft Windows Server 2012 R2 Standard"
 
 - name: Start windows service
@@ -28,3 +28,4 @@
     protocol: "{{ protocol_name }}"
     state: present
     enabled: yes
+...

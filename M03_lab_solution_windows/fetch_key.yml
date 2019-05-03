@@ -18,6 +18,6 @@
       file:
         path: "~/.ssh/{{ key }}"
         mode: 0400
-      delegate_to: localhost  
+      delegate_to: localhost
       become: false
 ...
