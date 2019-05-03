@@ -1,5 +1,8 @@
+[all:vars]
+GUID="{{ lookup('env', 'TOWER_GUID') }}"
+
 [jumpbox]
-bastion # ansible_host=bastion."{{ GUID }}".example.opentlc.com
+bastion ansible_host=bastion."{{ GUID }}".example.opentlc.com
 
 [towers]
 tower1 ansible_host=tower1."{{ GUID }}".internal
@@ -16,10 +19,9 @@ ad1 ansible_host=ad1."{{ GUID }}".internal
 [windows:vars]
 ansible_user=Administrator
 ansible_password=jVMijRwLbI02gFCo2xkjlZ9lxEA7bm7zgg==
-ansible_connection=psrp
-ansible_psrp_auth=basic
-ansible_psrp_cert_validation=ignore
-ansible_psrp_proxy=socks5h://localhost:2222
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore
+#ansible_winrm_proxy=socks5h://localhost:2222
 ansible_become=false
 
 [internal:children]

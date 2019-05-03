@@ -1,22 +1,12 @@
 Host workstation
-  Hostname workstation-44e6.rhpds.opentlc.com
+  Hostname workstation-90a0.rhpds.opentlc.com
   User ankay-redhat.com
+  IdentityFile ~/.ssh/id_rsa
 
 Host 10.10.10.* 192.168.*.* *.rhpds.opentlc.com
   ProxyJump workstation
   User cloud-user
-
-Host ctrl
-  Hostname 192.168.0.20
-  ProxyJump workstation
-  User cloud-user
   IdentityFile ~/.ssh/openstack.pem
-
-Match User cloud-user
-  IdentityFile ~/.ssh/openstack.pem
-
-Match User ankay-redhat.com
-  IdentityFile ~/.ssh/id_rsa
 
 Host *
   ForwardAgent yes
@@ -25,3 +15,4 @@ Host *
   ControlPersist 5m
   StrictHostKeyChecking no
   UserKnownHostsFile /dev/null
+
