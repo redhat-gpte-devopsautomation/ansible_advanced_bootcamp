@@ -1,0 +1,9 @@
+plugin: aws_ec2
+boto_profile: gpte
+regions:
+  - us-east-1
+group_by:
+  - instance-type=t2.medium
+filters:
+  tag:Project: three-tier-app-a122
+strict_permissions: False

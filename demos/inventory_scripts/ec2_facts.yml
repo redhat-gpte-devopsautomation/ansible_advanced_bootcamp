@@ -1,0 +1,28 @@
+---
+- name: Query an ec2 region
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  become: false
+  vars:
+    aws_profile:        gpte
+    aws_region:         us-east-1
+    aws_project_tag:    three-tier-app-a122
+
+  tasks:
+
+    - name: Gather EC2 facts
+      ec2_instance_facts:
+        profile:          "{{ aws_profile | default('gpte') }}"
+        region:           "{{ aws_region | default('us-east-1') }}"
+        filters:
+          "tag:Project":  "{{ aws_project_tag }}"
+      register:           r_ec2_instance_facts
+
+    - name: Output register
+      include_role:
+        name: register_to_file
+      vars:
+        my_register:      "{{ r_ec2_instance_facts }}"
+...
