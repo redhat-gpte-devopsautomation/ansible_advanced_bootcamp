@@ -10,6 +10,7 @@
     wait: yes
     nics:
     - net-name: int_network
+    - net-name: ext_network
     userdata: |
       #!/bin/bash
       curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub

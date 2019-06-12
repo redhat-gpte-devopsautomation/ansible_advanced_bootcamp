@@ -1,0 +1,7 @@
+---
+- name: 'STAGE 4: Generate inventory'
+  import_playbook: playbooks/4_generate_inventory.yml
+
+- name: 'STAGE 5: Deploy 3Tier App'
+  import_playbook: playbooks/5_deploy_3tier_app.yml
+...
