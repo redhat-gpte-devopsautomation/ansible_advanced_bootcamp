@@ -18,11 +18,13 @@
 
     - name: Add host
       add_host:
-        name: "{{ item.public_v4 }}"
+        name: "{{ server.public_v4 }}"
         group:
-          - "{{ item.metadata.group }}"
-          - "{{ item.metadata.deployment_name }}"
+          - "{{ server.metadata.group }}"
+          - "{{ server.metadata.deployment_name }}"
       loop: "{{ result.ansible_facts.openstack_servers }}"
+      loop_control:
+        loop_var: server
 
     - name: Generate lab static inventory file
       template:
