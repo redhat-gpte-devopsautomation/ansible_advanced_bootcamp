@@ -1,6 +1,7 @@
 - name: Create server instances
   os_server:
     cloud: ospcloud
+    state: "{{ osp_server_state | default(osp_state) | default('present') }}"
     name: "{{ item.instance_name }}"
     image: rhel-guest
     meta: "group={{ item.group }},deployment_name={{ item.deployment }}"
@@ -10,7 +11,7 @@
     wait: yes
     nics:
     - net-name: int_network
-    - net-name: ext_network
+      #    - net-name: ext_network
     userdata: |
       #!/bin/bash
       curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
@@ -29,6 +30,11 @@
   retries: 900
   loop: "{{ r_instances.results }}"
 
+- name: Debug instances 
+  debug:
+    msg: "Server is {{ item.item.instance_name }}"
+  loop: "{{ r_instances.results }}"
+  
 - name: Add floating IP to instances
   os_floating_ip:
     cloud: ospcloud
