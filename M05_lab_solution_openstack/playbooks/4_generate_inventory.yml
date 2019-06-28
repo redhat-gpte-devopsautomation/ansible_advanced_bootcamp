@@ -1,5 +1,5 @@
 ---
-- name: Generate openstack in-memory inventory 
+- name: Generate openstack in-memory inventory
   hosts: jumpbox
   gather_facts: false
   tags:

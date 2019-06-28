@@ -3,24 +3,29 @@
   import_playbook: playbooks/1_prepare_jumpbox.yml
   tags:
     - stage1
+    - prepare_workstation
 
 - name: 'STAGE 2: Build OpenStack VPC and deploy instances'
   import_playbook: playbooks/2_build_osp_vpc.yml
   tags:
     - stage2
+    - build_cloud
 
 - name: 'STAGE 3: Deploy instances to OpenStack VPC'
   import_playbook: playbooks/3_build_osp_infrastructure.yml
   tags:
     - stage3
+    - deploy_instances
 
 - name: 'STAGE 4: Generate inventory'
   import_playbook: playbooks/4_generate_inventory.yml
   tags:
     - stage4
+    - generate_inventory
 
 - name: 'STAGE 5: Deploy 3Tier App'
   import_playbook: playbooks/5_deploy_3tier_app.yml
   tags:
     - stage5
+    - deploy_three_tier_app
 ...

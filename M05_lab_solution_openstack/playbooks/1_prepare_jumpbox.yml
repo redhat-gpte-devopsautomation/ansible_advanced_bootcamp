@@ -3,7 +3,7 @@
   hosts: jumpbox
   become: yes
   gather_facts: false
-  tags:  
+  tags:
     - stage1
     - workstation-setup
 
