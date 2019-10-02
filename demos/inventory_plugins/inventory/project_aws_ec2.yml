@@ -5,6 +5,6 @@ regions:
 group_by:
   - instance-type=t2.medium
 filters:
-  tag:project: three-tier-app-a122
+  tag:project: three-tier-app-99cf
   #instance-state-name: running
 strict_permissions: False

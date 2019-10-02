@@ -5,7 +5,7 @@
     - stage1
     - prepare_workstation
 
-- name: 'STAGE 2: Build OpenStack VPC and deploy instances'
+- name: 'STAGE 2: Build OpenStack VPC'
   import_playbook: playbooks/2_build_osp_vpc.yml
   tags:
     - stage2
