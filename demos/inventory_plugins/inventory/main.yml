@@ -1,0 +1,9 @@
+---
+- name: all
+  hosts: all
+
+  tasks:
+    - name: Just another debug task
+      debug:
+        msg: Nothing to see here
+        verbosity: 2
