@@ -6,6 +6,6 @@ regions:
     #group_by:
     #- instance-type=t2.medium
 filters: 
-  tag:guid: 99cf
+  tag:guid: towerdev    
   #  instance-state-name: running
 strict_permissions: False
