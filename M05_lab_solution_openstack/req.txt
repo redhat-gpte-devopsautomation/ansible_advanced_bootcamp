@@ -51,7 +51,7 @@ perf==0.1
 ply==3.4
 policycoreutils-default-encoding==0.1
 prettytable==0.7.2
-psutil==2.2.1
+psutil==5.6.6
 pyasn1==0.1.9
 pyasn1-modules==0.0.8
 pycparser==2.19
