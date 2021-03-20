@@ -29,7 +29,7 @@ ipaplatform==4.5.0
 ipapython==4.5.0
 IPy==0.75
 iso8601==0.1.12
-Jinja2==2.10.1
+Jinja2==2.11.3
 jmespath==0.9.4
 jsonpatch==1.23
 jsonpointer==2.0
