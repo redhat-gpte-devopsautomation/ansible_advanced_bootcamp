@@ -73,7 +73,7 @@ python-yubico==1.2.3
 pyudev==0.15
 pyusb==1.0.0b1
 pyxattr==0.5.1
-PyYAML==5.1
+PyYAML==5.4
 qrcode==5.0.1
 requests==2.21.0
 requestsexceptions==1.4.0
