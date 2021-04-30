@@ -79,7 +79,7 @@ requests==2.21.0
 requestsexceptions==1.4.0
 rhnlib==2.5.65
 rhsm==1.19.10
-rsa==3.4.1
+rsa==4.7
 schedutils==0.4
 seobject==0.1
 sepolicy==1.1
