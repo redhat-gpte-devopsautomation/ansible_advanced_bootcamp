@@ -88,5 +88,5 @@ SSSDConfig==1.15.2
 stevedore==1.30.1
 subscription-manager==1.17.15
 urlgrabber==3.10
-urllib3==1.24.2
+urllib3==1.26.5
 yum-metadata-parser==1.1.4
